@@ -9,4 +9,8 @@
 #import "VideoCell.h"
 @implementation VideoCell
 
+- (IBAction)goToYouTube {
+    NSURL *url = [NSURL URLWithString:self.videoURL];
+    [[UIApplication sharedApplication] openURL:url];
+}
 @end

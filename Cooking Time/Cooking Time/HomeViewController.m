@@ -72,7 +72,7 @@ static NSString* cellIdentifire = @"VideoCell";
     
     cell.cellImage.image = nil; // or cell.poster.image = [UIImage imageNamed:@"placeholder.png"];
     cell.cellLabel.text = currentVideo.title;
-    
+    cell.videoURL = currentVideo.videoURL;
     [NHVideosServices getVideoImage:currentVideo.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
         dispatch_async(dispatch_get_main_queue(), ^{
             VideoCell *updateCell = (VideoCell *)[tableView cellForRowAtIndexPath:indexPath];

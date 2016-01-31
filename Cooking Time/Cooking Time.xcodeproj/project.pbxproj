@@ -15,6 +15,7 @@
 		9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */; };
 		9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */; };
 		9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */; };
+		9323C0E01C5EBA1F009CEC3B /* mqdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */; };
 		93F001871C5CA1D10060A991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001861C5CA1D10060A991 /* main.m */; };
 		93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001891C5CA1D10060A991 /* AppDelegate.m */; };
 		93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F001941C5CA1D10060A991 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoInternetView.xib; sourceTree = "<group>"; };
 		9323C0DC1C5EA8A0009CEC3B /* NoInternetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInternetView.h; sourceTree = "<group>"; };
 		9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInternetView.m; sourceTree = "<group>"; };
+		9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mqdefault.jpg; sourceTree = "<group>"; };
 		93F001821C5CA1D10060A991 /* Cooking Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cooking Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F001861C5CA1D10060A991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93F001881C5CA1D10060A991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		9323C0D41C5EA6A9009CEC3B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */,
 				9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */,
 			);
 			name = Images;
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9323C0E01C5EBA1F009CEC3B /* mqdefault.jpg in Resources */,
 				9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */,
 				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,
 				9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */,

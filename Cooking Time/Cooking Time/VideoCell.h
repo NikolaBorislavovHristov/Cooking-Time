@@ -11,6 +11,10 @@
 @interface VideoCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *cellImage;
-@property (weak, nonatomic) IBOutlet UITextView *cellLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
+
+@property (weak, nonatomic) NSString *videoURL;
+
+- (IBAction)goToYouTube;
 
 @end

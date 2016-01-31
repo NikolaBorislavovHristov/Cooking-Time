@@ -50,7 +50,7 @@
             
             NSString *imageURL = [[[currentVideoSnippet
                                     valueForKey:@"thumbnails"]
-                                    valueForKey:@"default"]
+                                    valueForKey:@"medium"]
                                     valueForKey:@"url"];
             
             NSString *url = [NSString stringWithFormat:@"https://www.youtube.com/watch?v=%@", [[currentVideoSnippet valueForKey:@"resourceId"]
