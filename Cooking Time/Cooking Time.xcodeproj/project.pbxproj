@@ -61,6 +61,7 @@
 		93F001841C5CA1D10060A991 /* Cooking Time */ = {
 			isa = PBXGroup;
 			children = (
+				93F002941C5DFA570060A991 /* Services */,
 				93F001881C5CA1D10060A991 /* AppDelegate.h */,
 				93F001891C5CA1D10060A991 /* AppDelegate.m */,
 				93F0018B1C5CA1D10060A991 /* FirstViewController.h */,
@@ -82,6 +83,13 @@
 				93F001861C5CA1D10060A991 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93F002941C5DFA570060A991 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +312,7 @@
 				93F0019E1C5CA1D10060A991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Ideas-->
+        <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
@@ -17,29 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="157.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfh-fC-Mzi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="vfh-fC-Mzi" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="Lwz-27-9Rx"/>
+                            <constraint firstAttribute="trailing" secondItem="vfh-fC-Mzi" secondAttribute="trailing" id="OJk-ii-HbS"/>
+                            <constraint firstItem="vfh-fC-Mzi" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="scU-ly-f1k"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="vfh-fC-Mzi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Lwz-27-9Rx"/>
+                                <exclude reference="OJk-ii-HbS"/>
+                                <exclude reference="scU-ly-f1k"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="vfh-fC-Mzi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Lwz-27-9Rx"/>
+                                <include reference="OJk-ii-HbS"/>
+                                <include reference="scU-ly-f1k"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ideas" image="Ideas" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,33 +67,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUD-qe-UoL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="VUD-qe-UoL" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="Iuf-ce-3H0"/>
+                            <constraint firstAttribute="trailing" secondItem="VUD-qe-UoL" secondAttribute="trailing" id="fCR-Fl-J5A"/>
+                            <constraint firstItem="VUD-qe-UoL" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="gXV-ml-6el"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="VUD-qe-UoL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Iuf-ce-3H0"/>
+                                <exclude reference="fCR-Fl-J5A"/>
+                                <exclude reference="gXV-ml-6el"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="VUD-qe-UoL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Iuf-ce-3H0"/>
+                                <include reference="fCR-Fl-J5A"/>
+                                <include reference="gXV-ml-6el"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Browse" image="Search" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="gtQ-Bx-lS2" id="mMz-M8-pNG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="gtQ-Bx-lS2">
+                    <connections>
+                        <outlet property="delegate" destination="8rJ-Kc-sve" id="D4M-Ve-9YK"/>
+                        <outlet property="searchContentsController" destination="8rJ-Kc-sve" id="zWb-ze-xrd"/>
+                        <outlet property="searchResultsDataSource" destination="8rJ-Kc-sve" id="Rrs-jl-88l"/>
+                        <outlet property="searchResultsDelegate" destination="8rJ-Kc-sve" id="YMh-YO-BYq"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="100" y="-294"/>
+            <point key="canvasLocation" x="99" y="-294"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="kJw-06-ug9">
@@ -96,7 +127,38 @@
                     <view key="view" contentMode="scaleToFill" id="ZyZ-9M-SL7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyD-Sc-Ea5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items/>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zyD-Sc-Ea5" firstAttribute="top" secondItem="ZyZ-9M-SL7" secondAttribute="top" id="VLl-og-Kye"/>
+                            <constraint firstAttribute="trailing" secondItem="zyD-Sc-Ea5" secondAttribute="trailing" id="W6u-e5-2Vv"/>
+                            <constraint firstItem="zyD-Sc-Ea5" firstAttribute="leading" secondItem="ZyZ-9M-SL7" secondAttribute="leading" id="g9O-PB-MmI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="zyD-Sc-Ea5"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="VLl-og-Kye"/>
+                                <exclude reference="W6u-e5-2Vv"/>
+                                <exclude reference="g9O-PB-MmI"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="zyD-Sc-Ea5"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="VLl-og-Kye"/>
+                                <include reference="W6u-e5-2Vv"/>
+                                <include reference="g9O-PB-MmI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="Favorites" id="yw9-5N-QDL"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -128,7 +190,7 @@
     </scenes>
     <resources>
         <image name="Favorites" width="24" height="24"/>
-        <image name="Ideas" width="24" height="24"/>
+        <image name="Home" width="24" height="24"/>
         <image name="Search" width="24" height="24"/>
     </resources>
 </document>
