@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93F001871C5CA1D10060A991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001861C5CA1D10060A991 /* main.m */; };
+		93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001891C5CA1D10060A991 /* AppDelegate.m */; };
+		93F0018D1C5CA1D10060A991 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F0018C1C5CA1D10060A991 /* FirstViewController.m */; };
+		93F001901C5CA1D10060A991 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F0018F1C5CA1D10060A991 /* SecondViewController.m */; };
+		93F001931C5CA1D10060A991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F001911C5CA1D10060A991 /* Main.storyboard */; };
+		93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F001941C5CA1D10060A991 /* Assets.xcassets */; };
+		93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F001961C5CA1D10060A991 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		93F001821C5CA1D10060A991 /* Cooking Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cooking Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F001861C5CA1D10060A991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93F001881C5CA1D10060A991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		93F001891C5CA1D10060A991 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		93F0018B1C5CA1D10060A991 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		93F0018C1C5CA1D10060A991 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		93F0018E1C5CA1D10060A991 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		93F0018F1C5CA1D10060A991 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		93F001921C5CA1D10060A991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93F001941C5CA1D10060A991 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93F001971C5CA1D10060A991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		93F001991C5CA1D10060A991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93F0017F1C5CA1D10060A991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93F001791C5CA1D10060A991 = {
+			isa = PBXGroup;
+			children = (
+				93F001841C5CA1D10060A991 /* Cooking Time */,
+				93F001831C5CA1D10060A991 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		93F001831C5CA1D10060A991 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93F001821C5CA1D10060A991 /* Cooking Time.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93F001841C5CA1D10060A991 /* Cooking Time */ = {
+			isa = PBXGroup;
+			children = (
+				93F001881C5CA1D10060A991 /* AppDelegate.h */,
+				93F001891C5CA1D10060A991 /* AppDelegate.m */,
+				93F0018B1C5CA1D10060A991 /* FirstViewController.h */,
+				93F0018C1C5CA1D10060A991 /* FirstViewController.m */,
+				93F0018E1C5CA1D10060A991 /* SecondViewController.h */,
+				93F0018F1C5CA1D10060A991 /* SecondViewController.m */,
+				93F001911C5CA1D10060A991 /* Main.storyboard */,
+				93F001941C5CA1D10060A991 /* Assets.xcassets */,
+				93F001961C5CA1D10060A991 /* LaunchScreen.storyboard */,
+				93F001991C5CA1D10060A991 /* Info.plist */,
+				93F001851C5CA1D10060A991 /* Supporting Files */,
+			);
+			path = "Cooking Time";
+			sourceTree = "<group>";
+		};
+		93F001851C5CA1D10060A991 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93F001861C5CA1D10060A991 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93F001811C5CA1D10060A991 /* Cooking Time */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F0019C1C5CA1D10060A991 /* Build configuration list for PBXNativeTarget "Cooking Time" */;
+			buildPhases = (
+				93F0017E1C5CA1D10060A991 /* Sources */,
+				93F0017F1C5CA1D10060A991 /* Frameworks */,
+				93F001801C5CA1D10060A991 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cooking Time";
+			productName = "Cooking Time";
+			productReference = 93F001821C5CA1D10060A991 /* Cooking Time.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93F0017A1C5CA1D10060A991 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Nikola Hristov";
+				TargetAttributes = {
+					93F001811C5CA1D10060A991 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 93F0017D1C5CA1D10060A991 /* Build configuration list for PBXProject "Cooking Time" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93F001791C5CA1D10060A991;
+			productRefGroup = 93F001831C5CA1D10060A991 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93F001811C5CA1D10060A991 /* Cooking Time */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93F001801C5CA1D10060A991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,
+				93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */,
+				93F001931C5CA1D10060A991 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93F0017E1C5CA1D10060A991 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F001901C5CA1D10060A991 /* SecondViewController.m in Sources */,
+				93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */,
+				93F0018D1C5CA1D10060A991 /* FirstViewController.m in Sources */,
+				93F001871C5CA1D10060A991 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		93F001911C5CA1D10060A991 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93F001921C5CA1D10060A991 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		93F001961C5CA1D10060A991 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93F001971C5CA1D10060A991 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93F0019A1C5CA1D10060A991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		93F0019B1C5CA1D10060A991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		93F0019D1C5CA1D10060A991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cooking Time/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anarhisthristov.Cooking-Time";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		93F0019E1C5CA1D10060A991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cooking Time/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anarhisthristov.Cooking-Time";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93F0017D1C5CA1D10060A991 /* Build configuration list for PBXProject "Cooking Time" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F0019A1C5CA1D10060A991 /* Debug */,
+				93F0019B1C5CA1D10060A991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F0019C1C5CA1D10060A991 /* Build configuration list for PBXNativeTarget "Cooking Time" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F0019D1C5CA1D10060A991 /* Debug */,
+				93F0019E1C5CA1D10060A991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93F0017A1C5CA1D10060A991 /* Project object */;
+}
