@@ -10,10 +10,8 @@
 
 @interface NHHttpClient : NSObject
 
-@property NSString* endpointURL;
-
 +(NHHttpClient*) withEndpointURL:(NSString*)endpointURL;
 
--(void) send: (void (^)(NSArray* videos, NSString* error))callback;
+-(void) send: (void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))callback;
 
 @end

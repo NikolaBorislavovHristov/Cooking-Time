@@ -10,15 +10,15 @@
 
 @implementation NHVideo
 
-+(NHVideo*) withImageUrl: (NSString*)imageUrl
++(NHVideo*) initWithImageUrl: (NSString*)imageUrl
               videoURL: (NSString*)videoURL
               andTitle: (NSString*)title;{
     
     NHVideo *video = [[NHVideo alloc] init];
     
-    video.imageURL = imageUrl;
     video.videoURL = videoURL;
     video.title = title;
+    video.imageUrl = imageUrl;
     
     return video;
 }

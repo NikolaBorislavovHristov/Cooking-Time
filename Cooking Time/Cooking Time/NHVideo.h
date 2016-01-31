@@ -10,11 +10,11 @@
 
 @interface NHVideo : NSObject
 
-@property (strong, nonatomic) NSString* imageURL;
+@property (strong, nonatomic) NSString* imageUrl;
 @property (strong, nonatomic) NSString* videoURL;
 @property (strong, nonatomic) NSString* title;
 
-+(NHVideo*) withImageUrl: (NSString*)imageUrl
++(NHVideo*) initWithImageUrl: (NSString*)imageUrl
               videoURL: (NSString*)videoURL
               andTitle: (NSString*)title;
 

@@ -7,6 +7,11 @@
 //
 
 #import "NHHttpClient.h"
+@interface NHHttpClient ()
+
+@property NSString* endpointURL;
+
+@end
 
 @implementation NHHttpClient
 
@@ -16,29 +21,13 @@
     return req;
 }
 
--(void) send: (void (^)(NSDictionary* dict))callback; {
-    NSURL* url = [NSURL URLWithString:self.baseURL];
+-(void) send: (void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))callback;{
+    NSURL* url = [NSURL URLWithString:self.endpointURL];
     
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"Error: %@", error);
-            return;
-        }
-        NSError* jsonError;
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
-                                                             options:NSJSONReadingAllowFragments
-                                                               error:&jsonError];
-        if (jsonError) {
-            return;
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            callback(dict);
-        });
-    }]
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request
+                                     completionHandler:callback]
      resume];
-
 }
 @end

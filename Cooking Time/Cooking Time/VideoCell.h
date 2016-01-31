@@ -10,4 +10,7 @@
 
 @interface VideoCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
+@property (weak, nonatomic) IBOutlet UITextView *cellLabel;
+
 @end
