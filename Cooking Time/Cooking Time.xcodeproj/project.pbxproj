@@ -13,6 +13,8 @@
 		9323C0A61C5E4350009CEC3B /* NHHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0A51C5E4350009CEC3B /* NHHttpClient.m */; };
 		9323C0D31C5E8EDC009CEC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0D21C5E8EDC009CEC3B /* Main.storyboard */; };
 		9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */; };
+		9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */; };
+		9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */; };
 		93F001871C5CA1D10060A991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001861C5CA1D10060A991 /* main.m */; };
 		93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001891C5CA1D10060A991 /* AppDelegate.m */; };
 		93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F001941C5CA1D10060A991 /* Assets.xcassets */; };
@@ -32,6 +34,9 @@
 		9323C0A51C5E4350009CEC3B /* NHHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHHttpClient.m; sourceTree = "<group>"; };
 		9323C0D21C5E8EDC009CEC3B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chromedino.jpg; sourceTree = "<group>"; };
+		9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoInternetView.xib; sourceTree = "<group>"; };
+		9323C0DC1C5EA8A0009CEC3B /* NoInternetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInternetView.h; sourceTree = "<group>"; };
+		9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInternetView.m; sourceTree = "<group>"; };
 		93F001821C5CA1D10060A991 /* Cooking Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cooking Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F001861C5CA1D10060A991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93F001881C5CA1D10060A991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +112,26 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		9323C0D81C5EA756009CEC3B /* VideoCell */ = {
+			isa = PBXGroup;
+			children = (
+				93F002981C5E05B60060A991 /* VideoCell.h */,
+				93F002991C5E05B60060A991 /* VideoCell.m */,
+				93F002961C5E04750060A991 /* VideoCell.xib */,
+			);
+			name = VideoCell;
+			sourceTree = "<group>";
+		};
+		9323C0D91C5EA767009CEC3B /* NoInternet */ = {
+			isa = PBXGroup;
+			children = (
+				9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */,
+				9323C0DC1C5EA8A0009CEC3B /* NoInternetView.h */,
+				9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */,
+			);
+			name = NoInternet;
+			sourceTree = "<group>";
+		};
 		93F001791C5CA1D10060A991 = {
 			isa = PBXGroup;
 			children = (
@@ -126,11 +151,11 @@
 		93F001841C5CA1D10060A991 /* Cooking Time */ = {
 			isa = PBXGroup;
 			children = (
+				93F002951C5E04530060A991 /* CustomViews */,
 				9323C0D41C5EA6A9009CEC3B /* Images */,
 				9323C0A31C5E4333009CEC3B /* Data */,
 				9323C09C1C5E2404009CEC3B /* Models */,
 				9323C0901C5E1D27009CEC3B /* Scenes */,
-				93F002951C5E04530060A991 /* CustomViews */,
 				93F002941C5DFA570060A991 /* Services */,
 				93F001881C5CA1D10060A991 /* AppDelegate.h */,
 				93F001891C5CA1D10060A991 /* AppDelegate.m */,
@@ -162,9 +187,8 @@
 		93F002951C5E04530060A991 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				93F002961C5E04750060A991 /* VideoCell.xib */,
-				93F002981C5E05B60060A991 /* VideoCell.h */,
-				93F002991C5E05B60060A991 /* VideoCell.m */,
+				9323C0D91C5EA767009CEC3B /* NoInternet */,
+				9323C0D81C5EA756009CEC3B /* VideoCell */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -226,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */,
 				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,
 				9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */,
 				93F002971C5E04750060A991 /* VideoCell.xib in Resources */,
@@ -245,6 +270,7 @@
 				93F0029A1C5E05B60060A991 /* VideoCell.m in Sources */,
 				9323C0A61C5E4350009CEC3B /* NHHttpClient.m in Sources */,
 				93F001871C5CA1D10060A991 /* main.m in Sources */,
+				9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */,
 				9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */,
 				9323C09B1C5E23D0009CEC3B /* NHVideosServices.m in Sources */,
 				9323C0971C5E1EB3009CEC3B /* HomeViewController.m in Sources */,

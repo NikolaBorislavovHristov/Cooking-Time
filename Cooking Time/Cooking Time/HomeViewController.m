@@ -12,8 +12,9 @@
 #import "NHVideo.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UITableView *videosTableView;
+
+@property (weak, nonatomic) IBOutlet UIView *viewContainer;
 
 @property NSMutableArray* videos;
 
@@ -43,17 +44,21 @@ static NSString* cellIdentifire = @"VideoCell";
 -(void) loadVideos{
     [NHVideosServices getNewestVideos:^(NSArray *videos, NSString *errorMessage) {
         if (errorMessage) {
-            //NSLog(errorMessage);
-            self.videos = [NSMutableArray arrayWithObject: [NHVideo initWithImageUrl:@"" videoURL:@"" andTitle:errorMessage]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.videosTableView removeFromSuperview];
+                UIView *noInternetView = [[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
+                                                                        owner:self
+                                                                      options:nil]
+                                          objectAtIndex:0];
+                
+                [self.viewContainer addSubview:noInternetView];
+            });
         } else {
             self.videos = [NSMutableArray arrayWithArray:videos];
-            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.videosTableView reloadData];
+            });
         }
-        
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.videosTableView reloadData];
-        });
     }];
 }
 

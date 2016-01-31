@@ -21,55 +21,90 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aln-sn-Dy4">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0s-V7-DhI">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="klD-BE-bRm">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="klD-BE-bRm" secondAttribute="trailing" id="dj8-2S-Zou"/>
+                                    <constraint firstAttribute="bottom" secondItem="klD-BE-bRm" secondAttribute="bottom" id="gjV-Ob-Yl8"/>
+                                    <constraint firstItem="klD-BE-bRm" firstAttribute="leading" secondItem="Z0s-V7-DhI" secondAttribute="leading" id="kh4-i7-wzj"/>
+                                    <constraint firstItem="klD-BE-bRm" firstAttribute="top" secondItem="Z0s-V7-DhI" secondAttribute="top" id="tPZ-AW-jwz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="klD-BE-bRm"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="dj8-2S-Zou"/>
+                                        <exclude reference="gjV-Ob-Yl8"/>
+                                        <exclude reference="kh4-i7-wzj"/>
+                                        <exclude reference="tPZ-AW-jwz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="klD-BE-bRm"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="dj8-2S-Zou"/>
+                                        <include reference="gjV-Ob-Yl8"/>
+                                        <include reference="kh4-i7-wzj"/>
+                                        <include reference="tPZ-AW-jwz"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aln-sn-Dy4" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="EWV-YF-1LA"/>
+                            <constraint firstItem="Z0s-V7-DhI" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="GLZ-H5-nMB"/>
                             <constraint firstItem="vfh-fC-Mzi" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="Lwz-27-9Rx"/>
                             <constraint firstAttribute="trailing" secondItem="vfh-fC-Mzi" secondAttribute="trailing" id="OJk-ii-HbS"/>
-                            <constraint firstItem="aln-sn-Dy4" firstAttribute="trailing" secondItem="vfh-fC-Mzi" secondAttribute="trailing" id="TnN-fd-PbV"/>
-                            <constraint firstItem="aln-sn-Dy4" firstAttribute="top" secondItem="vfh-fC-Mzi" secondAttribute="bottom" id="YJd-3Q-JWS"/>
-                            <constraint firstItem="aln-sn-Dy4" firstAttribute="leading" secondItem="vfh-fC-Mzi" secondAttribute="leading" id="orU-cF-whs"/>
+                            <constraint firstItem="Z0s-V7-DhI" firstAttribute="trailing" secondItem="vfh-fC-Mzi" secondAttribute="trailing" id="QNg-qm-wjk"/>
+                            <constraint firstItem="Z0s-V7-DhI" firstAttribute="leading" secondItem="vfh-fC-Mzi" secondAttribute="leading" id="U57-ND-Ygf"/>
+                            <constraint firstItem="Z0s-V7-DhI" firstAttribute="top" secondItem="vfh-fC-Mzi" secondAttribute="bottom" id="no7-Ow-ErO"/>
                             <constraint firstItem="vfh-fC-Mzi" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="scU-ly-f1k"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="vfh-fC-Mzi"/>
-                                <exclude reference="aln-sn-Dy4"/>
+                                <exclude reference="Z0s-V7-DhI"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Lwz-27-9Rx"/>
                                 <exclude reference="OJk-ii-HbS"/>
                                 <exclude reference="scU-ly-f1k"/>
-                                <exclude reference="EWV-YF-1LA"/>
-                                <exclude reference="TnN-fd-PbV"/>
-                                <exclude reference="YJd-3Q-JWS"/>
-                                <exclude reference="orU-cF-whs"/>
+                                <exclude reference="GLZ-H5-nMB"/>
+                                <exclude reference="QNg-qm-wjk"/>
+                                <exclude reference="U57-ND-Ygf"/>
+                                <exclude reference="no7-Ow-ErO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="vfh-fC-Mzi"/>
-                                <include reference="aln-sn-Dy4"/>
+                                <include reference="Z0s-V7-DhI"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Lwz-27-9Rx"/>
                                 <include reference="OJk-ii-HbS"/>
                                 <include reference="scU-ly-f1k"/>
-                                <include reference="EWV-YF-1LA"/>
-                                <include reference="TnN-fd-PbV"/>
-                                <include reference="YJd-3Q-JWS"/>
-                                <include reference="orU-cF-whs"/>
+                                <include reference="GLZ-H5-nMB"/>
+                                <include reference="QNg-qm-wjk"/>
+                                <include reference="U57-ND-Ygf"/>
+                                <include reference="no7-Ow-ErO"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="videosTableView" destination="aln-sn-Dy4" id="r3E-XM-x2H"/>
+                        <outlet property="videosTableView" destination="klD-BE-bRm" id="1Ne-Dt-ehG"/>
+                        <outlet property="viewContainer" destination="Z0s-V7-DhI" id="0Qm-5H-noA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
