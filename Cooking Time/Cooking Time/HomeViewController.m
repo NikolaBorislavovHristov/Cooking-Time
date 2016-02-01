@@ -13,12 +13,12 @@
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *videosTableView;
-
-@property (weak, nonatomic) IBOutlet UIView *viewContainer;
-
+@property (weak, nonatomic) IBOutlet UIToolbar *topBar;
+@property (weak, nonatomic) IBOutlet UITabBarItem *bottomBar;
 @property NSMutableArray* videos;
 
 @end
+
 
 @implementation HomeViewController
 
@@ -33,7 +33,7 @@ static NSString* cellIdentifire = @"VideoCell";
     
     UINib* nib = [UINib nibWithNibName:cellIdentifire
                                 bundle:nil];
-    
+
     [self.videosTableView registerNib:nib
                forCellReuseIdentifier:cellIdentifire];
     
@@ -46,12 +46,22 @@ static NSString* cellIdentifire = @"VideoCell";
         if (errorMessage) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.videosTableView removeFromSuperview];
-                UIView *noInternetView = [[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
+                UIView *noInternetView = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
                                                                         owner:self
                                                                       options:nil]
                                           objectAtIndex:0];
                 
-                [self.viewContainer addSubview:noInternetView];
+                [self.view addSubview:noInternetView];
+                
+                                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:noInternetView
+                                                                                      attribute:NSLayoutAttributeRight
+                                                                                      relatedBy:NSLayoutRelationEqual
+                                                                                         toItem:self.view
+                                                                                      attribute:NSLayoutAttributeRight
+                                                                                     multiplier:1
+                                                                                       constant:1]];
+                                [self.view updateConstraints];
+                
             });
         } else {
             self.videos = [NSMutableArray arrayWithArray:videos];
