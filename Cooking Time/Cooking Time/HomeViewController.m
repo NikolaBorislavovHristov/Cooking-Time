@@ -13,10 +13,8 @@
 #import "NHVideo.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UITableView *videosTableView;
 @property (weak, nonatomic) IBOutlet UIToolbar *topBar;
-@property (weak, nonatomic) IBOutlet UITabBarItem *bottomBar;
 @property NSMutableArray* videos;
 
 @end
@@ -48,59 +46,48 @@ static NSString* cellIdentifire = @"VideoCell";
         if (errorMessage) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.videosTableView removeFromSuperview];
-//                [self.mainView addSubview:noInternetView];
-//                
-//                [self.mainView addConstraint:[NSLayoutConstraint constraintWithItem:noInternetView
-//                                                                      attribute:NSLayoutAttributeTop
-//                                                                      relatedBy:NSLayoutRelationEqual
-//                                                                         toItem:self.mainView
-//                                                                          attribute:NSLayoutAttributeTop
-//                                                                     multiplier:1
-//                                                                       constant:300]];
-//                [self.view updateConstraints];
                 
-                UIView *containerView = self.mainView;
                 UIView *newSubview = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
                                                                               owner:self
                                                                             options:nil]
                                                 objectAtIndex:0];
 
                 newSubview.translatesAutoresizingMaskIntoConstraints = NO;
-                [containerView addSubview:newSubview];
+                [self.view addSubview:newSubview];
                 
-                [containerView addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
                                                                           attribute:NSLayoutAttributeTop
                                                                           relatedBy:NSLayoutRelationEqual
-                                                                             toItem:containerView
+                                                                             toItem:self.topBar
                                                                           attribute:NSLayoutAttributeTop
                                                                          multiplier:1.0
                                                                            constant:0.0]];
                 
-                [containerView addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
                                                                           attribute:NSLayoutAttributeLeading
                                                                           relatedBy:NSLayoutRelationEqual
-                                                                             toItem:containerView
+                                                                             toItem:self.view
                                                                           attribute:NSLayoutAttributeLeading
                                                                          multiplier:1.0
                                                                            constant:0.0]];
                 
-                [containerView addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
                                                                           attribute:NSLayoutAttributeBottom
                                                                           relatedBy:NSLayoutRelationEqual
-                                                                             toItem:containerView
+                                                                             toItem:self.bottomLayoutGuide
                                                                           attribute:NSLayoutAttributeBottom
                                                                          multiplier:1.0
                                                                            constant:0.0]];
                 
-                [containerView addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
                                                                           attribute:NSLayoutAttributeTrailing
                                                                           relatedBy:NSLayoutRelationEqual
-                                                                             toItem:containerView
+                                                                             toItem:self.view
                                                                           attribute:NSLayoutAttributeTrailing
                                                                          multiplier:1.0
                                                                            constant:0.0]];
                 
-                [containerView layoutIfNeeded];
+                [self.view layoutIfNeeded];
                 
             });
         } else {

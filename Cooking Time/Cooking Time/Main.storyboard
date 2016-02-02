@@ -69,8 +69,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="bottomBar" destination="acW-dT-cKf" id="LHe-Pj-oR9"/>
-                        <outlet property="mainView" destination="tsR-hK-woN" id="DiN-5V-JAj"/>
                         <outlet property="topBar" destination="vfh-fC-Mzi" id="Nbx-Bx-wMm"/>
                         <outlet property="videosTableView" destination="r9e-rm-b2l" id="CxG-Ya-Ilm"/>
                     </connections>
