@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NoInternetView : UIView
-
 - (IBAction)goToSettings:(UIButton *)sender;
-
+- (IBAction)reload:(UIButton *)sender;
 @end

@@ -222,6 +222,10 @@
 		93F0017A1C5CA1D10060A991 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					NoInternet,
+				);
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Nikola Hristov";
 				TargetAttributes = {

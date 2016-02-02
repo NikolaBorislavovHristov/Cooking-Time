@@ -9,9 +9,11 @@
 #import "HomeViewController.h"
 #import "NHVideosServices.h"
 #import "VideoCell.h"
+#import "NoInternetView.h"
 #import "NHVideo.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UITableView *videosTableView;
 @property (weak, nonatomic) IBOutlet UIToolbar *topBar;
 @property (weak, nonatomic) IBOutlet UITabBarItem *bottomBar;
@@ -46,21 +48,59 @@ static NSString* cellIdentifire = @"VideoCell";
         if (errorMessage) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.videosTableView removeFromSuperview];
-                UIView *noInternetView = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
-                                                                        owner:self
-                                                                      options:nil]
-                                          objectAtIndex:0];
+//                [self.mainView addSubview:noInternetView];
+//                
+//                [self.mainView addConstraint:[NSLayoutConstraint constraintWithItem:noInternetView
+//                                                                      attribute:NSLayoutAttributeTop
+//                                                                      relatedBy:NSLayoutRelationEqual
+//                                                                         toItem:self.mainView
+//                                                                          attribute:NSLayoutAttributeTop
+//                                                                     multiplier:1
+//                                                                       constant:300]];
+//                [self.view updateConstraints];
                 
-                [self.view addSubview:noInternetView];
+                UIView *containerView = self.mainView;
+                UIView *newSubview = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
+                                                                              owner:self
+                                                                            options:nil]
+                                                objectAtIndex:0];
+
+                newSubview.translatesAutoresizingMaskIntoConstraints = NO;
+                [containerView addSubview:newSubview];
                 
-                                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:noInternetView
-                                                                                      attribute:NSLayoutAttributeRight
-                                                                                      relatedBy:NSLayoutRelationEqual
-                                                                                         toItem:self.view
-                                                                                      attribute:NSLayoutAttributeRight
-                                                                                     multiplier:1
-                                                                                       constant:1]];
-                                [self.view updateConstraints];
+                [containerView addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                                                                          attribute:NSLayoutAttributeTop
+                                                                          relatedBy:NSLayoutRelationEqual
+                                                                             toItem:containerView
+                                                                          attribute:NSLayoutAttributeTop
+                                                                         multiplier:1.0
+                                                                           constant:0.0]];
+                
+                [containerView addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                                                                          attribute:NSLayoutAttributeLeading
+                                                                          relatedBy:NSLayoutRelationEqual
+                                                                             toItem:containerView
+                                                                          attribute:NSLayoutAttributeLeading
+                                                                         multiplier:1.0
+                                                                           constant:0.0]];
+                
+                [containerView addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                                                                          attribute:NSLayoutAttributeBottom
+                                                                          relatedBy:NSLayoutRelationEqual
+                                                                             toItem:containerView
+                                                                          attribute:NSLayoutAttributeBottom
+                                                                         multiplier:1.0
+                                                                           constant:0.0]];
+                
+                [containerView addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                                                                          attribute:NSLayoutAttributeTrailing
+                                                                          relatedBy:NSLayoutRelationEqual
+                                                                             toItem:containerView
+                                                                          attribute:NSLayoutAttributeTrailing
+                                                                         multiplier:1.0
+                                                                           constant:0.0]];
+                
+                [containerView layoutIfNeeded];
                 
             });
         } else {

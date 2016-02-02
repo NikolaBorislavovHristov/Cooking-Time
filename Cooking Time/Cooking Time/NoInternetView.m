@@ -14,4 +14,6 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 }
 
+- (IBAction)reload:(UIButton *)sender {
+}
 @end

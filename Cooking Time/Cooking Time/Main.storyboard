@@ -70,6 +70,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="bottomBar" destination="acW-dT-cKf" id="LHe-Pj-oR9"/>
+                        <outlet property="mainView" destination="tsR-hK-woN" id="DiN-5V-JAj"/>
                         <outlet property="topBar" destination="vfh-fC-Mzi" id="Nbx-Bx-wMm"/>
                         <outlet property="videosTableView" destination="r9e-rm-b2l" id="CxG-Ya-Ilm"/>
                     </connections>
@@ -81,15 +82,6 @@
         <!--Browse-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="gtQ-Bx-lS2">
-                    <connections>
-                        <outlet property="delegate" destination="8rJ-Kc-sve" id="D4M-Ve-9YK"/>
-                        <outlet property="searchContentsController" destination="8rJ-Kc-sve" id="zWb-ze-xrd"/>
-                        <outlet property="searchResultsDataSource" destination="8rJ-Kc-sve" id="Rrs-jl-88l"/>
-                        <outlet property="searchResultsDelegate" destination="8rJ-Kc-sve" id="YMh-YO-BYq"/>
-                    </connections>
-                </searchDisplayController>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
@@ -136,6 +128,15 @@
                         <outlet property="searchDisplayController" destination="gtQ-Bx-lS2" id="mMz-M8-pNG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="gtQ-Bx-lS2">
+                    <connections>
+                        <outlet property="delegate" destination="8rJ-Kc-sve" id="D4M-Ve-9YK"/>
+                        <outlet property="searchContentsController" destination="8rJ-Kc-sve" id="zWb-ze-xrd"/>
+                        <outlet property="searchResultsDataSource" destination="8rJ-Kc-sve" id="Rrs-jl-88l"/>
+                        <outlet property="searchResultsDelegate" destination="8rJ-Kc-sve" id="YMh-YO-BYq"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="99" y="-294"/>
         </scene>
