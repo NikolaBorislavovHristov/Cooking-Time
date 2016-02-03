@@ -9,14 +9,17 @@
 #import "NHVideosServices.h"
 #import "NHHttpClient.h"
 #import "NHVideo.h"
+#import "RequestState.m"
+#import "Cooking Time-Bridging-Header.h"
 
 @implementation NHVideosServices
 
 +(void)getNewestVideos: (void (^)(NSArray* videos, NSString* errorMessage))callback;{
+    EZLoadingActivity.show("Loading...", disableUI: false);
     NSString* endPoint = @"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId=PL8PM5J5RodlalW_XqjytpHnDx7AHh2IFT&fields=items%2Fsnippet&key=AIzaSyBBQyjFRp5FFKb5hbTrHYhi7vHNbuYm_yY";
     
     NHHttpClient *client = [NHHttpClient withEndpointURL:endPoint];
-    
+
     [client send:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             callback(nil, @"Can't connect with YouTube.");

@@ -15,5 +15,4 @@
 
 +(void)getVideoImage:(NSString *)imageURL
             callback:(void (^)(UIImage* image, NSString* errorMessage))callback;
-
 @end

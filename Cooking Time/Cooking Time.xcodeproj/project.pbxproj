@@ -18,6 +18,9 @@
 		9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */; };
 		9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */; };
 		9323C0E01C5EBA1F009CEC3B /* mqdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */; };
+		9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */; };
+		9398DE361C62A6FF009EF71C /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE351C62A6FF009EF71C /* CZPickerView.m */; };
+		9398DE381C62BBB0009EF71C /* RequestState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE371C62BBB0009EF71C /* RequestState.m */; };
 		93F001871C5CA1D10060A991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001861C5CA1D10060A991 /* main.m */; };
 		93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001891C5CA1D10060A991 /* AppDelegate.m */; };
 		93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F001941C5CA1D10060A991 /* Assets.xcassets */; };
@@ -44,6 +47,12 @@
 		9323C0DC1C5EA8A0009CEC3B /* NoInternetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInternetView.h; sourceTree = "<group>"; };
 		9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInternetView.m; sourceTree = "<group>"; };
 		9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mqdefault.jpg; sourceTree = "<group>"; };
+		9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cooking Time-Bridging-Header.h"; sourceTree = "<group>"; };
+		9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLoadingActivity.swift; sourceTree = "<group>"; };
+		9398DE331C62A6FF009EF71C /* CZPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPicker.h; sourceTree = "<group>"; };
+		9398DE341C62A6FF009EF71C /* CZPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPickerView.h; sourceTree = "<group>"; };
+		9398DE351C62A6FF009EF71C /* CZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPickerView.m; sourceTree = "<group>"; };
+		9398DE371C62BBB0009EF71C /* RequestState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestState.m; sourceTree = "<group>"; };
 		93F001821C5CA1D10060A991 /* Cooking Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cooking Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F001861C5CA1D10060A991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93F001881C5CA1D10060A991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,6 +160,33 @@
 			name = NoInternet;
 			sourceTree = "<group>";
 		};
+		9398DE2D1C628D2A009EF71C /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				9398DE321C62A6D4009EF71C /* Picker */,
+				9398DE311C62A690009EF71C /* Loading */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		9398DE311C62A690009EF71C /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */,
+			);
+			name = Loading;
+			sourceTree = "<group>";
+		};
+		9398DE321C62A6D4009EF71C /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				9398DE331C62A6FF009EF71C /* CZPicker.h */,
+				9398DE341C62A6FF009EF71C /* CZPickerView.h */,
+				9398DE351C62A6FF009EF71C /* CZPickerView.m */,
+			);
+			name = Picker;
+			sourceTree = "<group>";
+		};
 		93F001791C5CA1D10060A991 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +206,7 @@
 		93F001841C5CA1D10060A991 /* Cooking Time */ = {
 			isa = PBXGroup;
 			children = (
+				9398DE2D1C628D2A009EF71C /* Libs */,
 				93F002951C5E04530060A991 /* CustomViews */,
 				9323C0D41C5EA6A9009CEC3B /* Images */,
 				9323C0A31C5E4333009CEC3B /* Data */,
@@ -183,6 +220,7 @@
 				93F001961C5CA1D10060A991 /* LaunchScreen.storyboard */,
 				93F001991C5CA1D10060A991 /* Info.plist */,
 				93F001851C5CA1D10060A991 /* Supporting Files */,
+				9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */,
 			);
 			path = "Cooking Time";
 			sourceTree = "<group>";
@@ -199,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				9323C0981C5E215E009CEC3B /* Videos */,
+				9398DE371C62BBB0009EF71C /* RequestState.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -293,9 +332,12 @@
 			files = (
 				93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */,
 				93F0029A1C5E05B60060A991 /* VideoCell.m in Sources */,
+				9398DE361C62A6FF009EF71C /* CZPickerView.m in Sources */,
+				9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */,
 				9323C0A61C5E4350009CEC3B /* NHHttpClient.m in Sources */,
 				93F001871C5CA1D10060A991 /* main.m in Sources */,
 				9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */,
+				9398DE381C62BBB0009EF71C /* RequestState.m in Sources */,
 				9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */,
 				9323C09B1C5E23D0009CEC3B /* NHVideosServices.m in Sources */,
 				930B184D1C61C42700CB07FB /* BrowseViewController.m in Sources */,
@@ -401,10 +443,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Cooking Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anarhisthristov.Cooking-Time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cooking Time/Cooking Time-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -412,10 +458,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Cooking Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anarhisthristov.Cooking-Time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cooking Time/Cooking Time-Bridging-Header.h";
 			};
 			name = Release;
 		};

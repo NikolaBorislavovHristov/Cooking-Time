@@ -101,6 +101,9 @@ static NSString* cellIdentifire = @"VideoCell";
                     [self.view layoutIfNeeded];
                 }
                 
+                //Used to show the loading animation
+                [NSThread sleepForTimeInterval:3.0f];
+                
                 [self.videosTableView reloadData];
             });
         }
