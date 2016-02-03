@@ -7,6 +7,11 @@
 //
 
 #import "NoInternetView.h"
+@interface NoInternetView ()
+
+@property (nonatomic, strong) void (^callback)();
+
+@end
 
 @implementation NoInternetView
 
@@ -15,5 +20,12 @@
 }
 
 - (IBAction)reload:(UIButton *)sender {
+    if (self.callback != nil) {
+        self.callback();
+    }
+}
+
+-(void) setReloadCallback: (void (^)())withCallback; {
+    self.callback = withCallback;
 }
 @end

@@ -13,16 +13,15 @@
 #import "NHVideo.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *videosTableView;
 @property (weak, nonatomic) IBOutlet UIToolbar *topBar;
 @property NSMutableArray* videos;
+@property NoInternetView* noInternetView;
 
 @end
 
-
 @implementation HomeViewController
-
-NSMutableArray *videos;
 
 static NSString* cellIdentifire = @"VideoCell";
 
@@ -33,10 +32,13 @@ static NSString* cellIdentifire = @"VideoCell";
     
     UINib* nib = [UINib nibWithNibName:cellIdentifire
                                 bundle:nil];
-
     [self.videosTableView registerNib:nib
                forCellReuseIdentifier:cellIdentifire];
     
+    self.noInternetView = (NoInternetView *)[[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
+                                                                           owner:self
+                                                                         options:nil]
+                                             objectAtIndex:0];
     
     [self loadVideos];
 }
@@ -45,17 +47,19 @@ static NSString* cellIdentifire = @"VideoCell";
     [NHVideosServices getNewestVideos:^(NSArray *videos, NSString *errorMessage) {
         if (errorMessage) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.videosTableView removeFromSuperview];
+                if ([[self.view subviews] containsObject:self.noInternetView]) {
+                    return;
+                }
                 
-                UIView *newSubview = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
-                                                                              owner:self
-                                                                            options:nil]
-                                                objectAtIndex:0];
+                __weak typeof(self) weakSelf = self;
+                [self.noInternetView setReloadCallback:^{
+                    [weakSelf loadVideos];
+                }];
 
-                newSubview.translatesAutoresizingMaskIntoConstraints = NO;
-                [self.view addSubview:newSubview];
+                self.noInternetView.translatesAutoresizingMaskIntoConstraints = NO;
+                [self.view addSubview:self.noInternetView];
                 
-                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
                                                                           attribute:NSLayoutAttributeTop
                                                                           relatedBy:NSLayoutRelationEqual
                                                                              toItem:self.topBar
@@ -63,7 +67,7 @@ static NSString* cellIdentifire = @"VideoCell";
                                                                          multiplier:1.0
                                                                            constant:0.0]];
                 
-                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
                                                                           attribute:NSLayoutAttributeLeading
                                                                           relatedBy:NSLayoutRelationEqual
                                                                              toItem:self.view
@@ -71,7 +75,7 @@ static NSString* cellIdentifire = @"VideoCell";
                                                                          multiplier:1.0
                                                                            constant:0.0]];
                 
-                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
                                                                           attribute:NSLayoutAttributeBottom
                                                                           relatedBy:NSLayoutRelationEqual
                                                                              toItem:self.bottomLayoutGuide
@@ -79,7 +83,7 @@ static NSString* cellIdentifire = @"VideoCell";
                                                                          multiplier:1.0
                                                                            constant:0.0]];
                 
-                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:newSubview
+                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
                                                                           attribute:NSLayoutAttributeTrailing
                                                                           relatedBy:NSLayoutRelationEqual
                                                                              toItem:self.view
@@ -88,11 +92,15 @@ static NSString* cellIdentifire = @"VideoCell";
                                                                            constant:0.0]];
                 
                 [self.view layoutIfNeeded];
-                
             });
         } else {
             self.videos = [NSMutableArray arrayWithArray:videos];
             dispatch_async(dispatch_get_main_queue(), ^{
+                if ([[self.view subviews] containsObject:self.noInternetView]) {
+                    [self.noInternetView removeFromSuperview];
+                    [self.view layoutIfNeeded];
+                }
+                
                 [self.videosTableView reloadData];
             });
         }
@@ -107,9 +115,23 @@ static NSString* cellIdentifire = @"VideoCell";
     NHVideo *currentVideo = [self.videos objectAtIndex:indexPath.row];
     VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifire forIndexPath:indexPath];
     
-    cell.cellImage.image = nil; // or cell.poster.image = [UIImage imageNamed:@"placeholder.png"];
+    cell.cellImage.image = nil;
     cell.cellLabel.text = currentVideo.title;
     cell.videoURL = currentVideo.videoURL;
+    
+    if(indexPath.row % 2 == 0){
+        cell.backgroundColor = [UIColor colorWithRed:225.0f/255.0f
+                                               green:225.0f/255.0f
+                                                blue:225.0f/255.0f
+                                               alpha:1];
+
+    } else {
+        cell.backgroundColor = [UIColor colorWithRed:245.0f/255.0f
+                                               green:245.0f/255.0f
+                                                blue:245.0f/255.0f
+                                               alpha:1];
+    }
+
     [NHVideosServices getVideoImage:currentVideo.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
         dispatch_async(dispatch_get_main_queue(), ^{
             VideoCell *updateCell = (VideoCell *)[tableView cellForRowAtIndexPath:indexPath];

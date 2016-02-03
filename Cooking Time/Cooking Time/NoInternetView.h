@@ -11,4 +11,5 @@
 @interface NoInternetView : UIView
 - (IBAction)goToSettings:(UIButton *)sender;
 - (IBAction)reload:(UIButton *)sender;
+- (void)setReloadCallback: (void (^)())withCallback;
 @end

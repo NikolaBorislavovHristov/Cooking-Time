@@ -8,54 +8,70 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="319" id="bNq-i7-gXz" customClass="VideoCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="375" id="bNq-i7-gXz" customClass="VideoCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bNq-i7-gXz" id="Vwi-nZ-VEM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdw-sp-JCh">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="320" id="g5E-hX-0Ep"/>
-                            <constraint firstAttribute="height" constant="180" id="vI7-N9-dQK"/>
+                            <constraint firstAttribute="width" constant="120" id="2bo-vb-dbb"/>
+                            <constraint firstAttribute="height" constant="90" id="Kdj-gT-pdK"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="g5E-hX-0Ep"/>
-                                <exclude reference="vI7-N9-dQK"/>
+                                <exclude reference="2bo-vb-dbb"/>
+                                <exclude reference="Kdj-gT-pdK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="g5E-hX-0Ep"/>
-                                <include reference="vI7-N9-dQK"/>
+                                <include reference="2bo-vb-dbb"/>
+                                <include reference="Kdj-gT-pdK"/>
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppo-Mb-yNu">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppo-Mb-yNu">
                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0B-xn-dg2">
+                    <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0B-xn-dg2">
                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                        <variation key="widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="318.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="CbD-mU-fH7"/>
+                            <constraint firstAttribute="height" constant="90" id="yp9-g2-bPS"/>
+                        </constraints>
+                        <state key="normal" image="play.png"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CbD-mU-fH7"/>
+                                <exclude reference="yp9-g2-bPS"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="CbD-mU-fH7"/>
+                                <include reference="yp9-g2-bPS"/>
+                            </mask>
                         </variation>
                         <connections>
                             <action selector="goToYouTube" destination="bNq-i7-gXz" eventType="touchUpInside" id="pkw-Dt-c0v"/>
                         </connections>
                     </button>
                 </subviews>
-                <color key="backgroundColor" white="0.96592310855263153" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="Ppo-Mb-yNu" secondAttribute="bottom" constant="247.5" id="E15-1X-ELM"/>
-                    <constraint firstItem="Ppo-Mb-yNu" firstAttribute="centerX" secondItem="Vwi-nZ-VEM" secondAttribute="centerX" id="G3m-0j-nup"/>
-                    <constraint firstItem="zdw-sp-JCh" firstAttribute="centerX" secondItem="Vwi-nZ-VEM" secondAttribute="centerX" id="Krd-gW-Tjq"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Ppo-Mb-yNu" secondAttribute="trailing" id="dPt-Lb-D39"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="zdw-sp-JCh" secondAttribute="bottom" constant="26.5" id="oMz-d6-HAK"/>
+                    <constraint firstItem="zdw-sp-JCh" firstAttribute="top" secondItem="Vwi-nZ-VEM" secondAttribute="topMargin" constant="-3" id="KPd-bE-RHI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ppo-Mb-yNu" secondAttribute="trailing" id="MAq-jy-8B4"/>
+                    <constraint firstItem="q0B-xn-dg2" firstAttribute="leading" secondItem="Vwi-nZ-VEM" secondAttribute="leadingMargin" constant="-8" id="U0v-Kk-vGt"/>
+                    <constraint firstItem="zdw-sp-JCh" firstAttribute="leading" secondItem="Vwi-nZ-VEM" secondAttribute="leadingMargin" constant="-8" id="Y9j-UF-vx0"/>
+                    <constraint firstItem="q0B-xn-dg2" firstAttribute="top" secondItem="Vwi-nZ-VEM" secondAttribute="topMargin" constant="-4" id="beq-Qh-glo"/>
+                    <constraint firstItem="Ppo-Mb-yNu" firstAttribute="leading" secondItem="zdw-sp-JCh" secondAttribute="trailing" constant="8" id="tPv-f3-2b5"/>
+                    <constraint firstAttribute="topMargin" secondItem="Ppo-Mb-yNu" secondAttribute="top" id="xcz-V4-Uay"/>
                 </constraints>
                 <variation key="default">
                     <mask key="subviews">
@@ -64,11 +80,13 @@
                         <exclude reference="q0B-xn-dg2"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="E15-1X-ELM"/>
-                        <exclude reference="G3m-0j-nup"/>
-                        <exclude reference="dPt-Lb-D39"/>
-                        <exclude reference="Krd-gW-Tjq"/>
-                        <exclude reference="oMz-d6-HAK"/>
+                        <exclude reference="U0v-Kk-vGt"/>
+                        <exclude reference="beq-Qh-glo"/>
+                        <exclude reference="KPd-bE-RHI"/>
+                        <exclude reference="Y9j-UF-vx0"/>
+                        <exclude reference="MAq-jy-8B4"/>
+                        <exclude reference="tPv-f3-2b5"/>
+                        <exclude reference="xcz-V4-Uay"/>
                     </mask>
                 </variation>
                 <variation key="widthClass=compact">
@@ -78,20 +96,24 @@
                         <include reference="q0B-xn-dg2"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="E15-1X-ELM"/>
-                        <include reference="G3m-0j-nup"/>
-                        <include reference="dPt-Lb-D39"/>
-                        <include reference="Krd-gW-Tjq"/>
-                        <include reference="oMz-d6-HAK"/>
+                        <include reference="U0v-Kk-vGt"/>
+                        <include reference="beq-Qh-glo"/>
+                        <include reference="KPd-bE-RHI"/>
+                        <include reference="Y9j-UF-vx0"/>
+                        <include reference="MAq-jy-8B4"/>
+                        <include reference="tPv-f3-2b5"/>
+                        <include reference="xcz-V4-Uay"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="cellImage" destination="zdw-sp-JCh" id="shY-Ct-RRZ"/>
                 <outlet property="cellLabel" destination="Ppo-Mb-yNu" id="XcW-DD-pTy"/>
             </connections>
-            <point key="canvasLocation" x="972" y="647.5"/>
+            <point key="canvasLocation" x="512" y="381"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="play.png" width="72" height="72"/>
+    </resources>
 </document>

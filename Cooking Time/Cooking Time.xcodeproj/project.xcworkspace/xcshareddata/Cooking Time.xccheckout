@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F6520F7C-BE50-462A-92E3-B3D544021A9B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>26EDF883EA60C4AF5B355CA1ADEC6BC1BB0CBBCD</key>
+		<string>https://github.com/NikolaBorislavovHristov/Cooking-Time.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Cooking Time/Cooking Time.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>26EDF883EA60C4AF5B355CA1ADEC6BC1BB0CBBCD</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/NikolaBorislavovHristov/Cooking-Time.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>26EDF883EA60C4AF5B355CA1ADEC6BC1BB0CBBCD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>26EDF883EA60C4AF5B355CA1ADEC6BC1BB0CBBCD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS%20Project</string>
+		</dict>
+	</array>
+</dict>
+</plist>

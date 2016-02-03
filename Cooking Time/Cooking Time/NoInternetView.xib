@@ -58,7 +58,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.94901961088180542" green="0.94901961088180542" blue="0.94901961088180542" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="pcT-PK-TsF" firstAttribute="top" secondItem="g4p-bt-dky" secondAttribute="bottom" constant="8" id="2WM-uo-VDV"/>
                 <constraint firstItem="pcT-PK-TsF" firstAttribute="leading" secondItem="boJ-2e-pRv" secondAttribute="leading" constant="8" id="46Y-SH-apL"/>
@@ -83,19 +83,19 @@
                     <exclude reference="obU-zY-EMh"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="JD8-xE-oME"/>
+                    <exclude reference="to8-iz-s0k"/>
+                    <exclude reference="7b2-Bj-pZy"/>
+                    <exclude reference="Rjr-Rm-REp"/>
+                    <exclude reference="FdI-uB-aBp"/>
+                    <exclude reference="vxY-B7-Pdh"/>
+                    <exclude reference="2WM-uo-VDV"/>
+                    <exclude reference="46Y-SH-apL"/>
                     <exclude reference="Bbk-Qe-4Hn"/>
                     <exclude reference="ZEE-9G-tFX"/>
                     <exclude reference="mLo-Xn-ldw"/>
                     <exclude reference="plt-jf-TJH"/>
                     <exclude reference="qaW-my-oe3"/>
-                    <exclude reference="FdI-uB-aBp"/>
-                    <exclude reference="vxY-B7-Pdh"/>
-                    <exclude reference="2WM-uo-VDV"/>
-                    <exclude reference="46Y-SH-apL"/>
-                    <exclude reference="JD8-xE-oME"/>
-                    <exclude reference="to8-iz-s0k"/>
-                    <exclude reference="7b2-Bj-pZy"/>
-                    <exclude reference="Rjr-Rm-REp"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -107,19 +107,19 @@
                     <include reference="obU-zY-EMh"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="JD8-xE-oME"/>
+                    <include reference="to8-iz-s0k"/>
+                    <include reference="7b2-Bj-pZy"/>
+                    <include reference="Rjr-Rm-REp"/>
+                    <include reference="FdI-uB-aBp"/>
+                    <include reference="vxY-B7-Pdh"/>
+                    <include reference="2WM-uo-VDV"/>
+                    <include reference="46Y-SH-apL"/>
                     <include reference="Bbk-Qe-4Hn"/>
                     <include reference="ZEE-9G-tFX"/>
                     <include reference="mLo-Xn-ldw"/>
                     <include reference="plt-jf-TJH"/>
                     <include reference="qaW-my-oe3"/>
-                    <include reference="FdI-uB-aBp"/>
-                    <include reference="vxY-B7-Pdh"/>
-                    <include reference="2WM-uo-VDV"/>
-                    <include reference="46Y-SH-apL"/>
-                    <include reference="JD8-xE-oME"/>
-                    <include reference="to8-iz-s0k"/>
-                    <include reference="7b2-Bj-pZy"/>
-                    <include reference="Rjr-Rm-REp"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="676" y="238"/>

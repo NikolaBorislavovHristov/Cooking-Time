@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930B18491C615F3A00CB07FB /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 930B18481C615F3A00CB07FB /* play.png */; };
+		930B184D1C61C42700CB07FB /* BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 930B184C1C61C42700CB07FB /* BrowseViewController.m */; };
 		9323C0971C5E1EB3009CEC3B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0961C5E1EB3009CEC3B /* HomeViewController.m */; };
 		9323C09B1C5E23D0009CEC3B /* NHVideosServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C09A1C5E23D0009CEC3B /* NHVideosServices.m */; };
 		9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C09E1C5E2413009CEC3B /* NHVideo.m */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930B18481C615F3A00CB07FB /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		930B184B1C61C42700CB07FB /* BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseViewController.h; sourceTree = "<group>"; };
+		930B184C1C61C42700CB07FB /* BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseViewController.m; sourceTree = "<group>"; };
 		9323C0951C5E1EB3009CEC3B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		9323C0961C5E1EB3009CEC3B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		9323C0991C5E23D0009CEC3B /* NHVideosServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHVideosServices.h; sourceTree = "<group>"; };
@@ -62,9 +67,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930B184A1C61C3F700CB07FB /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				930B184B1C61C42700CB07FB /* BrowseViewController.h */,
+				930B184C1C61C42700CB07FB /* BrowseViewController.m */,
+			);
+			name = Browse;
+			sourceTree = "<group>";
+		};
 		9323C0901C5E1D27009CEC3B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				930B184A1C61C3F700CB07FB /* Browse */,
 				9323C0911C5E1D5E009CEC3B /* Home */,
 			);
 			name = Scenes;
@@ -109,6 +124,7 @@
 		9323C0D41C5EA6A9009CEC3B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				930B18481C615F3A00CB07FB /* play.png */,
 				9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */,
 				9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */,
 			);
@@ -258,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9323C0E01C5EBA1F009CEC3B /* mqdefault.jpg in Resources */,
+				930B18491C615F3A00CB07FB /* play.png in Resources */,
 				9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */,
 				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,
 				9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */,
@@ -281,6 +298,7 @@
 				9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */,
 				9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */,
 				9323C09B1C5E23D0009CEC3B /* NHVideosServices.m in Sources */,
+				930B184D1C61C42700CB07FB /* BrowseViewController.m in Sources */,
 				9323C0971C5E1EB3009CEC3B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
