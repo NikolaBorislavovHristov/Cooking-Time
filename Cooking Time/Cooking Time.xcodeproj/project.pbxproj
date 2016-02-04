@@ -17,7 +17,6 @@
 		9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */; };
 		9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */; };
 		9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */; };
-		9323C0E01C5EBA1F009CEC3B /* mqdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */; };
 		9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */; };
 		9398DE361C62A6FF009EF71C /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE351C62A6FF009EF71C /* CZPickerView.m */; };
 		93B9BCB61C63190F00CE0689 /* LoadingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCB51C63190F00CE0689 /* LoadingServices.swift */; };
@@ -49,7 +48,6 @@
 		9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoInternetView.xib; sourceTree = "<group>"; };
 		9323C0DC1C5EA8A0009CEC3B /* NoInternetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInternetView.h; sourceTree = "<group>"; };
 		9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInternetView.m; sourceTree = "<group>"; };
-		9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mqdefault.jpg; sourceTree = "<group>"; };
 		9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cooking Time-Bridging-Header.h"; sourceTree = "<group>"; };
 		9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLoadingActivity.swift; sourceTree = "<group>"; };
 		9398DE331C62A6FF009EF71C /* CZPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPicker.h; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				930B18481C615F3A00CB07FB /* play.png */,
-				9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */,
 				9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */,
 			);
 			name = Images;
@@ -251,21 +248,13 @@
 		93F001841C5CA1D10060A991 /* Cooking Time */ = {
 			isa = PBXGroup;
 			children = (
-				9398DE2D1C628D2A009EF71C /* Libs */,
-				93F002951C5E04530060A991 /* CustomViews */,
+				9323C0D21C5E8EDC009CEC3B /* Main.storyboard */,
+				9323C0901C5E1D27009CEC3B /* Scenes */,
 				9323C0D41C5EA6A9009CEC3B /* Images */,
 				9323C0A31C5E4333009CEC3B /* Data */,
 				9323C09C1C5E2404009CEC3B /* Models */,
-				9323C0901C5E1D27009CEC3B /* Scenes */,
 				93F002941C5DFA570060A991 /* Services */,
-				93F001881C5CA1D10060A991 /* AppDelegate.h */,
-				93F001891C5CA1D10060A991 /* AppDelegate.m */,
-				9323C0D21C5E8EDC009CEC3B /* Main.storyboard */,
-				93F001941C5CA1D10060A991 /* Assets.xcassets */,
-				93F001961C5CA1D10060A991 /* LaunchScreen.storyboard */,
-				93F001991C5CA1D10060A991 /* Info.plist */,
 				93F001851C5CA1D10060A991 /* Supporting Files */,
-				9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */,
 			);
 			path = "Cooking Time";
 			sourceTree = "<group>";
@@ -273,6 +262,14 @@
 		93F001851C5CA1D10060A991 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93F002951C5E04530060A991 /* CustomViews */,
+				9398DE2D1C628D2A009EF71C /* Libs */,
+				93F001941C5CA1D10060A991 /* Assets.xcassets */,
+				9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */,
+				93F001881C5CA1D10060A991 /* AppDelegate.h */,
+				93F001891C5CA1D10060A991 /* AppDelegate.m */,
+				93F001961C5CA1D10060A991 /* LaunchScreen.storyboard */,
+				93F001991C5CA1D10060A991 /* Info.plist */,
 				93F001861C5CA1D10060A991 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -359,7 +356,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9323C0E01C5EBA1F009CEC3B /* mqdefault.jpg in Resources */,
 				930B18491C615F3A00CB07FB /* play.png in Resources */,
 				9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */,
 				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,

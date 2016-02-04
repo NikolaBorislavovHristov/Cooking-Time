@@ -19,6 +19,9 @@
 - (IBAction)removeIngredientOnClick;
 - (IBAction)addIngredientOnClick;
 - (IBAction)listIngredientOnClick;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+@property (weak, nonatomic) IBOutlet UISlider *durationSlider;
+- (IBAction)durationSliderOnChange:(UISlider *)sender;
 
 @end
 
@@ -117,6 +120,9 @@
     }
     
     [self.ingredients removeObjectsInArray:ingredientsToRemove];
+}
+- (IBAction)durationSliderOnChange:(UISlider *)sender {
+    self.durationLabel.text = [NSString stringWithFormat:@"%d min", [[NSNumber numberWithFloat:sender.value]intValue]];
 }
 @end
 
