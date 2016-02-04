@@ -102,7 +102,7 @@ static NSString* cellIdentifire = @"VideoCell";
                 }
                 
                 //Used to show the loading animation
-                [NSThread sleepForTimeInterval:3.0f];
+                //[NSThread sleepForTimeInterval:3.0f];
                 
                 [self.videosTableView reloadData];
             });
@@ -117,7 +117,8 @@ static NSString* cellIdentifire = @"VideoCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NHVideo *currentVideo = [self.videos objectAtIndex:indexPath.row];
     VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifire forIndexPath:indexPath];
-    
+//    UIImage *defaultImage = [UIImage animatedImageNamed:@"frame-" duration:0.5f];
+//    UIGifImage *gif = [[UIGifImage alloc] ];
     cell.cellImage.image = nil;
     cell.cellLabel.text = currentVideo.title;
     cell.videoURL = currentVideo.videoURL;
@@ -137,6 +138,8 @@ static NSString* cellIdentifire = @"VideoCell";
 
     [NHVideosServices getVideoImage:currentVideo.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            //            [NSThread sleepForTimeInterval:3.0f];
+            NSLog(@"image");
             VideoCell *updateCell = (VideoCell *)[tableView cellForRowAtIndexPath:indexPath];
             if (updateCell) {
                 updateCell.cellImage.image = image;

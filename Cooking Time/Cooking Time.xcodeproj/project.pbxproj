@@ -17,12 +17,16 @@
 		9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */; };
 		9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */; };
 		9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */; };
+		93379CCF1C639570000F2017 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93379CCE1C639570000F2017 /* libsqlite3.tbd */; };
+		93379CD51C639773000F2017 /* NHDbContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 93379CD41C639773000F2017 /* NHDbContext.m */; };
 		9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */; };
 		9398DE361C62A6FF009EF71C /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE351C62A6FF009EF71C /* CZPickerView.m */; };
 		93B9BCB61C63190F00CE0689 /* LoadingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCB51C63190F00CE0689 /* LoadingServices.swift */; };
 		93B9BCBB1C63248A00CE0689 /* Picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCBA1C63248A00CE0689 /* Picker.m */; };
 		93B9BCC21C633D8D00CE0689 /* KSToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCC11C633D8D00CE0689 /* KSToastView.m */; };
 		93B9BCC51C633EDD00CE0689 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCC41C633EDD00CE0689 /* Toast.m */; };
+		93B9BCC81C634DD900CE0689 /* loadingresource.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B9BCC71C634DD900CE0689 /* loadingresource.gif */; };
+		93B9BCCA1C6354E300CE0689 /* loadingGIF in Resources */ = {isa = PBXBuildFile; fileRef = 93B9BCC91C6354E300CE0689 /* loadingGIF */; };
 		93F001871C5CA1D10060A991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001861C5CA1D10060A991 /* main.m */; };
 		93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001891C5CA1D10060A991 /* AppDelegate.m */; };
 		93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F001941C5CA1D10060A991 /* Assets.xcassets */; };
@@ -48,6 +52,9 @@
 		9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoInternetView.xib; sourceTree = "<group>"; };
 		9323C0DC1C5EA8A0009CEC3B /* NoInternetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInternetView.h; sourceTree = "<group>"; };
 		9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInternetView.m; sourceTree = "<group>"; };
+		93379CCE1C639570000F2017 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		93379CD31C639773000F2017 /* NHDbContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHDbContext.h; sourceTree = "<group>"; };
+		93379CD41C639773000F2017 /* NHDbContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHDbContext.m; sourceTree = "<group>"; };
 		9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cooking Time-Bridging-Header.h"; sourceTree = "<group>"; };
 		9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLoadingActivity.swift; sourceTree = "<group>"; };
 		9398DE331C62A6FF009EF71C /* CZPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPicker.h; sourceTree = "<group>"; };
@@ -60,6 +67,8 @@
 		93B9BCC11C633D8D00CE0689 /* KSToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSToastView.m; sourceTree = "<group>"; };
 		93B9BCC31C633EDD00CE0689 /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		93B9BCC41C633EDD00CE0689 /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
+		93B9BCC71C634DD900CE0689 /* loadingresource.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loadingresource.gif; sourceTree = "<group>"; };
+		93B9BCC91C6354E300CE0689 /* loadingGIF */ = {isa = PBXFileReference; lastKnownFileType = folder; path = loadingGIF; sourceTree = "<group>"; };
 		93F001821C5CA1D10060A991 /* Cooking Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cooking Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F001861C5CA1D10060A991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93F001881C5CA1D10060A991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93379CCF1C639570000F2017 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +141,8 @@
 		9323C0A31C5E4333009CEC3B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9323C0A41C5E4350009CEC3B /* NHHttpClient.h */,
-				9323C0A51C5E4350009CEC3B /* NHHttpClient.m */,
+				93379CD21C639760000F2017 /* DbContext */,
+				93379CD11C63974D000F2017 /* HttpClient */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -140,6 +150,8 @@
 		9323C0D41C5EA6A9009CEC3B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				93B9BCC91C6354E300CE0689 /* loadingGIF */,
+				93B9BCC71C634DD900CE0689 /* loadingresource.gif */,
 				930B18481C615F3A00CB07FB /* play.png */,
 				9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */,
 			);
@@ -166,9 +178,36 @@
 			name = NoInternet;
 			sourceTree = "<group>";
 		};
+		93379CD01C639586000F2017 /* SqlLite */ = {
+			isa = PBXGroup;
+			children = (
+				93379CCE1C639570000F2017 /* libsqlite3.tbd */,
+			);
+			name = SqlLite;
+			sourceTree = "<group>";
+		};
+		93379CD11C63974D000F2017 /* HttpClient */ = {
+			isa = PBXGroup;
+			children = (
+				9323C0A41C5E4350009CEC3B /* NHHttpClient.h */,
+				9323C0A51C5E4350009CEC3B /* NHHttpClient.m */,
+			);
+			name = HttpClient;
+			sourceTree = "<group>";
+		};
+		93379CD21C639760000F2017 /* DbContext */ = {
+			isa = PBXGroup;
+			children = (
+				93379CD31C639773000F2017 /* NHDbContext.h */,
+				93379CD41C639773000F2017 /* NHDbContext.m */,
+			);
+			name = DbContext;
+			sourceTree = "<group>";
+		};
 		9398DE2D1C628D2A009EF71C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				93379CD01C639586000F2017 /* SqlLite */,
 				93B9BCC61C633EE300CE0689 /* Toast */,
 				9398DE321C62A6D4009EF71C /* Picker */,
 				9398DE311C62A690009EF71C /* Loading */,
@@ -359,6 +398,8 @@
 				930B18491C615F3A00CB07FB /* play.png in Resources */,
 				9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */,
 				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,
+				93B9BCC81C634DD900CE0689 /* loadingresource.gif in Resources */,
+				93B9BCCA1C6354E300CE0689 /* loadingGIF in Resources */,
 				9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */,
 				93F002971C5E04750060A991 /* VideoCell.xib in Resources */,
 				93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */,
@@ -382,6 +423,7 @@
 				9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */,
 				9323C0A61C5E4350009CEC3B /* NHHttpClient.m in Sources */,
 				93F001871C5CA1D10060A991 /* main.m in Sources */,
+				93379CD51C639773000F2017 /* NHDbContext.m in Sources */,
 				9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */,
 				9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */,
 				9323C09B1C5E23D0009CEC3B /* NHVideosServices.m in Sources */,
