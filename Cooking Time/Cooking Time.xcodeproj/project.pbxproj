@@ -20,8 +20,10 @@
 		9323C0E01C5EBA1F009CEC3B /* mqdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DF1C5EBA1F009CEC3B /* mqdefault.jpg */; };
 		9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */; };
 		9398DE361C62A6FF009EF71C /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE351C62A6FF009EF71C /* CZPickerView.m */; };
-		9398DE381C62BBB0009EF71C /* RequestState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE371C62BBB0009EF71C /* RequestState.m */; };
 		93B9BCB61C63190F00CE0689 /* LoadingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCB51C63190F00CE0689 /* LoadingServices.swift */; };
+		93B9BCBB1C63248A00CE0689 /* Picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCBA1C63248A00CE0689 /* Picker.m */; };
+		93B9BCC21C633D8D00CE0689 /* KSToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCC11C633D8D00CE0689 /* KSToastView.m */; };
+		93B9BCC51C633EDD00CE0689 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCC41C633EDD00CE0689 /* Toast.m */; };
 		93F001871C5CA1D10060A991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001861C5CA1D10060A991 /* main.m */; };
 		93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001891C5CA1D10060A991 /* AppDelegate.m */; };
 		93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F001941C5CA1D10060A991 /* Assets.xcassets */; };
@@ -53,8 +55,13 @@
 		9398DE331C62A6FF009EF71C /* CZPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPicker.h; sourceTree = "<group>"; };
 		9398DE341C62A6FF009EF71C /* CZPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPickerView.h; sourceTree = "<group>"; };
 		9398DE351C62A6FF009EF71C /* CZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPickerView.m; sourceTree = "<group>"; };
-		9398DE371C62BBB0009EF71C /* RequestState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestState.m; sourceTree = "<group>"; };
 		93B9BCB51C63190F00CE0689 /* LoadingServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingServices.swift; sourceTree = "<group>"; };
+		93B9BCB91C63248A00CE0689 /* Picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picker.h; sourceTree = "<group>"; };
+		93B9BCBA1C63248A00CE0689 /* Picker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picker.m; sourceTree = "<group>"; };
+		93B9BCC01C633D8D00CE0689 /* KSToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSToastView.h; sourceTree = "<group>"; };
+		93B9BCC11C633D8D00CE0689 /* KSToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSToastView.m; sourceTree = "<group>"; };
+		93B9BCC31C633EDD00CE0689 /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
+		93B9BCC41C633EDD00CE0689 /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
 		93F001821C5CA1D10060A991 /* Cooking Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cooking Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F001861C5CA1D10060A991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93F001881C5CA1D10060A991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -165,6 +172,7 @@
 		9398DE2D1C628D2A009EF71C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				93B9BCC61C633EE300CE0689 /* Toast */,
 				9398DE321C62A6D4009EF71C /* Picker */,
 				9398DE311C62A690009EF71C /* Loading */,
 			);
@@ -195,6 +203,33 @@
 				93B9BCB51C63190F00CE0689 /* LoadingServices.swift */,
 			);
 			name = Loading;
+			sourceTree = "<group>";
+		};
+		93B9BCB81C63247200CE0689 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				93B9BCB91C63248A00CE0689 /* Picker.h */,
+				93B9BCBA1C63248A00CE0689 /* Picker.m */,
+			);
+			name = Picker;
+			sourceTree = "<group>";
+		};
+		93B9BCBC1C63265600CE0689 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				93B9BCC31C633EDD00CE0689 /* Toast.h */,
+				93B9BCC41C633EDD00CE0689 /* Toast.m */,
+			);
+			name = Toast;
+			sourceTree = "<group>";
+		};
+		93B9BCC61C633EE300CE0689 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				93B9BCC01C633D8D00CE0689 /* KSToastView.h */,
+				93B9BCC11C633D8D00CE0689 /* KSToastView.m */,
+			);
+			name = Toast;
 			sourceTree = "<group>";
 		};
 		93F001791C5CA1D10060A991 = {
@@ -246,9 +281,10 @@
 		93F002941C5DFA570060A991 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				93B9BCBC1C63265600CE0689 /* Toast */,
+				93B9BCB81C63247200CE0689 /* Picker */,
 				93B9BCB71C6319DF00CE0689 /* Loading */,
 				9323C0981C5E215E009CEC3B /* Videos */,
-				9398DE371C62BBB0009EF71C /* RequestState.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -341,14 +377,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B9BCC51C633EDD00CE0689 /* Toast.m in Sources */,
 				93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */,
 				93F0029A1C5E05B60060A991 /* VideoCell.m in Sources */,
+				93B9BCBB1C63248A00CE0689 /* Picker.m in Sources */,
 				9398DE361C62A6FF009EF71C /* CZPickerView.m in Sources */,
+				93B9BCC21C633D8D00CE0689 /* KSToastView.m in Sources */,
 				9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */,
 				9323C0A61C5E4350009CEC3B /* NHHttpClient.m in Sources */,
 				93F001871C5CA1D10060A991 /* main.m in Sources */,
 				9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */,
-				9398DE381C62BBB0009EF71C /* RequestState.m in Sources */,
 				9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */,
 				9323C09B1C5E23D0009CEC3B /* NHVideosServices.m in Sources */,
 				93B9BCB61C63190F00CE0689 /* LoadingServices.swift in Sources */,

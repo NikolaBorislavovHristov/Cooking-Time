@@ -16,4 +16,12 @@ import UIKit
     static func hide() {
         EZLoadingActivity.hide();
     }
+    
+    static func fail() {
+        EZLoadingActivity.hide(success: false, animated: true);
+    }
+    
+    static func success() {
+        EZLoadingActivity.hide(success: true, animated: true)
+    }
 }

@@ -10,15 +10,15 @@
 #import "UIKit/UIKit.h"
 #import "CZPickerView.h"
 #import "Cooking_Time-Swift.h"
+#import "Toast.h"
 
 @interface BrowseViewController () <UITextFieldDelegate, CZPickerViewDataSource, CZPickerViewDelegate>
 
+@property (weak, nonatomic) NSMutableArray *ingredients;
 @property (weak, nonatomic) IBOutlet UITextField *phraseField;
 - (IBAction)removeIngredientOnClick;
 - (IBAction)addIngredientOnClick;
 - (IBAction)listIngredientOnClick;
-
-@property NSMutableArray *ingredients;
 
 @end
 
@@ -31,14 +31,12 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    if (theTextField == self.phraseField) {
-        [theTextField resignFirstResponder];
-    }
+    [self.phraseField resignFirstResponder];
     return YES;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
+    [self.phraseField resignFirstResponder];
     [LoadingServices hide];
     [super touchesBegan:touches withEvent:event];
 }
