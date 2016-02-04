@@ -9,6 +9,7 @@
 #import "BrowseViewController.h"
 #import "UIKit/UIKit.h"
 #import "CZPickerView.h"
+#import "Cooking_Time-Swift.h"
 
 @interface BrowseViewController () <UITextFieldDelegate, CZPickerViewDataSource, CZPickerViewDelegate>
 
@@ -38,6 +39,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+    [LoadingServices hide];
     [super touchesBegan:touches withEvent:event];
 }
 
@@ -117,10 +119,6 @@
     }
     
     [self.ingredients removeObjectsInArray:ingredientsToRemove];
-}
-
-- (void)czpickerViewDidClickCancelButton:(CZPickerView *)pickerView{
-    NSLog(@"Canceled.");
 }
 @end
 

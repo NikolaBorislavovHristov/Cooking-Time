@@ -17,5 +17,53 @@
             endingLineNumber = "15">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cooking Time/NHVideosServices.m"
+            timestampString = "476257664.25303"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "+getNewestVideos:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[NHVideosServices getNewestVideos:]"
+                  moduleName = "Cooking Time"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikola/iOS%20Project/Cooking%20Time/Cooking%20Time/NHVideosServices.m"
+                  timestampString = "476257382.59252"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36+[NHVideosServices getNewestVideos:]_block_invoke"
+                  moduleName = "Cooking Time"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikola/iOS%20Project/Cooking%20Time/Cooking%20Time/NHVideosServices.m"
+                  timestampString = "476257382.594159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "58">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
