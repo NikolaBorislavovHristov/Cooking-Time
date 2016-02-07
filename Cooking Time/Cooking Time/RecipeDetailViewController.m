@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITableView *ingredientsTable;
 @property (weak, nonatomic) IBOutlet UITableView *flavorsTable;
+@property (weak, nonatomic) IBOutlet UIScrollView *scroller;
 
 @end
 
@@ -32,6 +33,10 @@ static NSString* flavorCellIdentifire = @"FlavorTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.scroller setScrollEnabled:YES];
+//    self.scroller.frame =
+//    [self.scroller setContentSize:CGSizeMake(768, 2000)];
+    
     flavorNames = [self.recipe.flavors allKeys];
     [self.navigation setTitle:self.recipe.name];
     
@@ -55,13 +60,21 @@ static NSString* flavorCellIdentifire = @"FlavorTableViewCell";
 
     self.timeLabel.text = [NSString stringWithFormat:@"%@ min", self.recipe.time];
     
+    self.ingredientsTable.allowsSelection = NO;
     self.ingredientsTable.delegate = self;
     self.ingredientsTable.dataSource = self;
     
+    self.flavorsTable.allowsSelection = NO;
     self.flavorsTable.delegate = self;
     self.flavorsTable.dataSource = self;
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    CGRect newFrame = self.view.frame;
+    newFrame.size.height += 100;
+
+    self.scroller.contentSize = newFrame.size;
+}
 
 - (IBAction)resizeImage:(UIPinchGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateEnded) {
@@ -113,10 +126,8 @@ static NSString* flavorCellIdentifire = @"FlavorTableViewCell";
         return cell;
     } else {
         FlavorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:flavorCellIdentifire forIndexPath:indexPath];
-        
-        cell.name = flavorNames[indexPath.row];
-        //NSDictionary *flavors = self.recipe.flavors;
-        cell.progressBar.progress = 0.7;
+        cell.name.text = flavorNames[indexPath.row];
+        cell.progressBar.progress = [[self.recipe.flavors valueForKey:flavorNames[indexPath.row]] floatValue];
         return cell;
     }
 }

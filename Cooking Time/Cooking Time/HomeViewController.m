@@ -152,6 +152,10 @@ static NSString* noInternetViewIdentifire = @"NoInternetView";
     }
 }
 
+- (IBAction)goToYouTubeChanel {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.youtube.com/playlist?list=PL8PM5J5RodlalW_XqjytpHnDx7AHh2IFT"]];
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.videos.count;
 }

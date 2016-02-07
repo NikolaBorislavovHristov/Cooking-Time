@@ -8,36 +8,100 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FlavorTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="FlavorTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFU-0d-nsh">
-                        <rect key="frame" x="8" y="12" width="49" height="20"/>
-                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                        <color key="textColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7tf-BO-mYY" customClass="ASProgressPopUpView">
-                        <rect key="frame" x="140" y="21" width="172" height="2"/>
-                        <color key="progressTintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </progressView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6q-4b-ipl">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7tf-BO-mYY" customClass="ASProgressPopUpView">
+                                <rect key="frame" x="140" y="21" width="172" height="2"/>
+                                <color key="progressTintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFU-0d-nsh">
+                                <rect key="frame" x="8" y="12" width="49" height="20"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <color key="textColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7tf-BO-mYY" firstAttribute="leading" secondItem="PFU-0d-nsh" secondAttribute="trailing" constant="22" id="1uh-Oq-qZJ"/>
+                            <constraint firstItem="7tf-BO-mYY" firstAttribute="top" secondItem="z6q-4b-ipl" secondAttribute="top" constant="43" id="8NB-Eg-rXm"/>
+                            <constraint firstItem="PFU-0d-nsh" firstAttribute="top" secondItem="z6q-4b-ipl" secondAttribute="top" constant="25" id="9xi-Mo-wUx"/>
+                            <constraint firstAttribute="height" constant="69.5" id="gOc-dx-iVO"/>
+                            <constraint firstAttribute="trailing" secondItem="7tf-BO-mYY" secondAttribute="trailing" constant="8" id="iW5-Pk-fKs"/>
+                            <constraint firstItem="PFU-0d-nsh" firstAttribute="leading" secondItem="z6q-4b-ipl" secondAttribute="leading" constant="15" id="lgD-N7-gyi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="7tf-BO-mYY"/>
+                                <exclude reference="PFU-0d-nsh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="gOc-dx-iVO"/>
+                                <exclude reference="9xi-Mo-wUx"/>
+                                <exclude reference="lgD-N7-gyi"/>
+                                <exclude reference="1uh-Oq-qZJ"/>
+                                <exclude reference="8NB-Eg-rXm"/>
+                                <exclude reference="iW5-Pk-fKs"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="7tf-BO-mYY"/>
+                                <include reference="PFU-0d-nsh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="gOc-dx-iVO"/>
+                                <include reference="9xi-Mo-wUx"/>
+                                <include reference="lgD-N7-gyi"/>
+                                <include reference="1uh-Oq-qZJ"/>
+                                <include reference="8NB-Eg-rXm"/>
+                                <include reference="iW5-Pk-fKs"/>
+                            </mask>
+                        </variation>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7tf-BO-mYY" firstAttribute="leading" secondItem="PFU-0d-nsh" secondAttribute="trailing" constant="83" id="622-6E-kFv"/>
-                    <constraint firstItem="7tf-BO-mYY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="7LF-k5-nOM"/>
-                    <constraint firstItem="PFU-0d-nsh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="eIj-iF-Cvn"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="PFU-0d-nsh" secondAttribute="leading" id="fdq-0C-Lou"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="7tf-BO-mYY" secondAttribute="trailing" id="nPD-Y6-6os"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="z6q-4b-ipl" secondAttribute="trailing" constant="-8" id="5tb-HK-axi"/>
+                    <constraint firstItem="z6q-4b-ipl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Hni-gw-Y2X"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="z6q-4b-ipl" secondAttribute="bottom" constant="-8" id="TIH-Hb-tRp"/>
+                    <constraint firstItem="z6q-4b-ipl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="gMR-Uz-ocM"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="z6q-4b-ipl"/>
+                    </mask>
+                    <mask key="constraints">
+                        <exclude reference="5tb-HK-axi"/>
+                        <exclude reference="Hni-gw-Y2X"/>
+                        <exclude reference="TIH-Hb-tRp"/>
+                        <exclude reference="gMR-Uz-ocM"/>
+                    </mask>
+                </variation>
+                <variation key="widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="z6q-4b-ipl"/>
+                    </mask>
+                    <mask key="constraints">
+                        <include reference="5tb-HK-axi"/>
+                        <include reference="Hni-gw-Y2X"/>
+                        <include reference="TIH-Hb-tRp"/>
+                        <include reference="gMR-Uz-ocM"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="name" destination="PFU-0d-nsh" id="lnu-oZ-foh"/>
                 <outlet property="progressBar" destination="7tf-BO-mYY" id="p0K-Bn-87h"/>
             </connections>
+            <point key="canvasLocation" x="103" y="308"/>
         </tableViewCell>
     </objects>
 </document>

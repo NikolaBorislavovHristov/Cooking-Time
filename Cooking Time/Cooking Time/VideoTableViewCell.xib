@@ -37,8 +37,8 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppo-Mb-yNu">
                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
-                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                        <color key="textColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0B-xn-dg2">
@@ -47,6 +47,8 @@
                             <constraint firstAttribute="width" constant="120" id="CbD-mU-fH7"/>
                             <constraint firstAttribute="height" constant="90" id="yp9-g2-bPS"/>
                         </constraints>
+                        <color key="tintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <size key="titleShadowOffset" width="3" height="3"/>
                         <state key="normal" image="play.png"/>
                         <variation key="default">
                             <mask key="constraints">

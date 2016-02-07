@@ -51,6 +51,7 @@
 		93F98FB41C679DE5009A7DC0 /* FlavorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FB21C679DE5009A7DC0 /* FlavorTableViewCell.xib */; };
 		93F98FBA1C67A1E4009A7DC0 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98FB71C67A1E4009A7DC0 /* ASPopUpView.m */; };
 		93F98FBB1C67A1E4009A7DC0 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98FB91C67A1E4009A7DC0 /* ASProgressPopUpView.m */; };
+		93F98FBD1C67AE9D009A7DC0 /* youtubeico.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FBC1C67AE9D009A7DC0 /* youtubeico.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 		93F98FB71C67A1E4009A7DC0 /* ASPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopUpView.m; sourceTree = "<group>"; };
 		93F98FB81C67A1E4009A7DC0 /* ASProgressPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASProgressPopUpView.h; sourceTree = "<group>"; };
 		93F98FB91C67A1E4009A7DC0 /* ASProgressPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASProgressPopUpView.m; sourceTree = "<group>"; };
+		93F98FBC1C67AE9D009A7DC0 /* youtubeico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtubeico.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		9323C0D41C5EA6A9009CEC3B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				93F98FBC1C67AE9D009A7DC0 /* youtubeico.png */,
 				93F98FAB1C67307D009A7DC0 /* launch.png */,
 				93F98FA71C671309009A7DC0 /* eat.jpg */,
 				93F98F9D1C6660F0009A7DC0 /* star.png */,
@@ -568,6 +571,7 @@
 				93379CD71C63B09D000F2017 /* yummly-api-logo.png in Resources */,
 				930B18491C615F3A00CB07FB /* play.png in Resources */,
 				93F98F9E1C6660F0009A7DC0 /* star.png in Resources */,
+				93F98FBD1C67AE9D009A7DC0 /* youtubeico.png in Resources */,
 				93F98FA81C671309009A7DC0 /* eat.jpg in Resources */,
 				9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */,
 				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,
