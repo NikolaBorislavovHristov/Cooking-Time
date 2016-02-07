@@ -8,7 +8,9 @@
 
 #import "RecipeDetailViewController.h"
 #import "NHToastService.h"
-@interface RecipeDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+#import "FlavorTableViewCell.h"
+
+@interface RecipeDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UIView *imageWrapper;
@@ -16,18 +18,21 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigation;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITableView *ingredientsTable;
+@property (weak, nonatomic) IBOutlet UITableView *flavorsTable;
 
 @end
 
 @implementation RecipeDetailViewController {
     CGRect initImageFrame;
+    NSArray *flavorNames;
 }
 
-static NSString* cellIdentifire = @"RatingCollectionViewCell";
+static NSString* ratingCellIdentifire = @"RatingCollectionViewCell";
+static NSString* flavorCellIdentifire = @"FlavorTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    flavorNames = [self.recipe.flavors allKeys];
     [self.navigation setTitle:self.recipe.name];
     
     self.image.image = self.recipe.smallImage;
@@ -36,13 +41,25 @@ static NSString* cellIdentifire = @"RatingCollectionViewCell";
     self.ratingView.dataSource = self;
     self.ratingView.delegate = self;
     
-    UINib* nib = [UINib nibWithNibName:cellIdentifire
+    UINib* starNib = [UINib nibWithNibName:ratingCellIdentifire
+                                    bundle:nil];
+    
+    [self.ratingView registerNib:starNib
+      forCellWithReuseIdentifier:ratingCellIdentifire];
+    
+    UINib* flavorNib = [UINib nibWithNibName:flavorCellIdentifire
                                 bundle:nil];
     
-    [self.ratingView registerNib:nib
-      forCellWithReuseIdentifier:cellIdentifire];
+    [self.flavorsTable registerNib:flavorNib
+            forCellReuseIdentifier:flavorCellIdentifire];
 
     self.timeLabel.text = [NSString stringWithFormat:@"%@ min", self.recipe.time];
+    
+    self.ingredientsTable.delegate = self;
+    self.ingredientsTable.dataSource = self;
+    
+    self.flavorsTable.delegate = self;
+    self.flavorsTable.dataSource = self;
 }
 
 
@@ -59,9 +76,6 @@ static NSString* cellIdentifire = @"RatingCollectionViewCell";
     
     self.image.center = CGPointMake(self.imageWrapper.frame.size.width  / 2,
                                     self.imageWrapper.frame.size.height / 2);
-    
-//    recipe.ingredients = ingredients;
-//    recipe.flavors = flavors;
 }
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -70,10 +84,41 @@ static NSString* cellIdentifire = @"RatingCollectionViewCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifire
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ratingCellIdentifire
                                                                            forIndexPath:indexPath];
     
     return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView == self.ingredientsTable) {
+        return self.recipe.ingredients.count;
+    } else {
+        return self.recipe.flavors.count;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (tableView == self.ingredientsTable) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IngredientTableViewCell" forIndexPath:indexPath];
+        
+        NSString *ingredient = self.recipe.ingredients[indexPath.row];
+        cell.textLabel.text = ingredient;
+        cell.textLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:17];
+        cell.textLabel.textColor = [UIColor colorWithRed:225.0f/255.0f
+                                                   green:97.0f/255.0f
+                                                    blue:32.0f/255.0f
+                                                   alpha:1];
+        return cell;
+    } else {
+        FlavorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:flavorCellIdentifire forIndexPath:indexPath];
+        
+        cell.name = flavorNames[indexPath.row];
+        //NSDictionary *flavors = self.recipe.flavors;
+        cell.progressBar.progress = 0.7;
+        return cell;
+    }
 }
 
 @end

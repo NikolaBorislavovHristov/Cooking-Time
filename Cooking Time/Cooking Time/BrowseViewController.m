@@ -50,6 +50,11 @@
     CZPickerView *picker = [[CZPickerView alloc] initWithHeaderTitle:@"Remove ingredients"
                                                    cancelButtonTitle:@"Cancel"
                                                   confirmButtonTitle:@"Confirm"];
+    
+    picker.headerBackgroundColor = picker.confirmButtonBackgroundColor =[UIColor colorWithRed:225.0f/255.0f
+                                                                                        green:97.0f/255.0f
+                                                                                         blue:32.0f/255.0f
+                                                                                        alpha:1];
     picker.delegate = self;
     picker.dataSource = self;
     picker.allowMultipleSelection = YES;
@@ -78,7 +83,11 @@
     
     [alert addAction:ok];
     [alert addAction:cancel];
-    
+    alert.view.tintColor = [UIColor colorWithRed:225.0f/255.0f
+                                           green:97.0f/255.0f
+                                            blue:32.0f/255.0f
+                                           alpha:1];
+
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = @"Enter ingredient";
     }];
@@ -90,6 +99,11 @@
     CZPickerView *picker = [[CZPickerView alloc] initWithHeaderTitle:@"Ingredients"
                                                    cancelButtonTitle:@"Cancel"
                                                   confirmButtonTitle:@"Ok"];
+    picker.headerBackgroundColor = picker.confirmButtonBackgroundColor = [UIColor colorWithRed:225.0f/255.0f
+                                                                                        green:97.0f/255.0f
+                                                                                         blue:32.0f/255.0f
+                                                                                        alpha:1];
+
     picker.delegate = self;
     picker.dataSource = self;
     picker.needFooterView = NO;

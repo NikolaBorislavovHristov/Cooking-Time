@@ -59,7 +59,7 @@
     
                 NSArray *ingredients = [currentRecipeRawData valueForKey:@"ingredients"];
                 NSNumber *time = [NSNumber numberWithInt:([[currentRecipeRawData valueForKey:@"totalTimeInSeconds"] intValue] / 60)];
-                NSArray *flavors = [currentRecipeRawData valueForKey:@"flavors"];
+                NSDictionary *flavors = [currentRecipeRawData valueForKey:@"flavors"];
                 NSNumber *rating = [currentRecipeRawData valueForKey:@"rating"];
     
                 NHRecipe *currentRecipe = [NHRecipe initWithImageUrl:imageUrl

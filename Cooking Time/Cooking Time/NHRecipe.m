@@ -15,7 +15,7 @@
                             name: (NSString*)name
                      ingredients: (NSArray*)ingredients
                             time: (NSNumber*)time
-                         flavors: (NSArray*)flavors
+                         flavors: (NSDictionary*)flavors
                         recipeId: (NSString*)recipeId
                        andRating: (NSNumber*)rating; {
     

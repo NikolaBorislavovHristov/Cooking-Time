@@ -13,7 +13,7 @@
 		9323C09B1C5E23D0009CEC3B /* NHVideoServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C09A1C5E23D0009CEC3B /* NHVideoServices.m */; };
 		9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C09E1C5E2413009CEC3B /* NHVideo.m */; };
 		9323C0A61C5E4350009CEC3B /* NHHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0A51C5E4350009CEC3B /* NHHttpClient.m */; };
-		9323C0D31C5E8EDC009CEC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0D21C5E8EDC009CEC3B /* Main.storyboard */; };
+		9323C0D31C5E8EDC009CEC3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0D21C5E8EDC009CEC3B /* Main.storyboard */; settings = {ASSET_TAGS = (2, ); }; };
 		9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */; };
 		9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9323C0DA1C5EA78B009CEC3B /* NoInternetView.xib */; };
 		9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */; };
@@ -47,6 +47,10 @@
 		93F98FA81C671309009A7DC0 /* eat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FA71C671309009A7DC0 /* eat.jpg */; };
 		93F98FAC1C67307D009A7DC0 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FAB1C67307D009A7DC0 /* launch.png */; };
 		93F98FAE1C677F4C009A7DC0 /* star-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FAD1C677F4C009A7DC0 /* star-2.png */; };
+		93F98FB31C679DE5009A7DC0 /* FlavorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98FB11C679DE5009A7DC0 /* FlavorTableViewCell.m */; };
+		93F98FB41C679DE5009A7DC0 /* FlavorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FB21C679DE5009A7DC0 /* FlavorTableViewCell.xib */; };
+		93F98FBA1C67A1E4009A7DC0 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98FB71C67A1E4009A7DC0 /* ASPopUpView.m */; };
+		93F98FBB1C67A1E4009A7DC0 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98FB91C67A1E4009A7DC0 /* ASProgressPopUpView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +118,13 @@
 		93F98FA71C671309009A7DC0 /* eat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eat.jpg; sourceTree = "<group>"; };
 		93F98FAB1C67307D009A7DC0 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		93F98FAD1C677F4C009A7DC0 /* star-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-2.png"; sourceTree = "<group>"; };
+		93F98FB01C679DE5009A7DC0 /* FlavorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlavorTableViewCell.h; sourceTree = "<group>"; };
+		93F98FB11C679DE5009A7DC0 /* FlavorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlavorTableViewCell.m; sourceTree = "<group>"; };
+		93F98FB21C679DE5009A7DC0 /* FlavorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlavorTableViewCell.xib; sourceTree = "<group>"; };
+		93F98FB61C67A1E4009A7DC0 /* ASPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopUpView.h; sourceTree = "<group>"; };
+		93F98FB71C67A1E4009A7DC0 /* ASPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopUpView.m; sourceTree = "<group>"; };
+		93F98FB81C67A1E4009A7DC0 /* ASProgressPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASProgressPopUpView.h; sourceTree = "<group>"; };
+		93F98FB91C67A1E4009A7DC0 /* ASProgressPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASProgressPopUpView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +278,7 @@
 		9398DE2D1C628D2A009EF71C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				93F98FB51C67A041009A7DC0 /* Progress */,
 				93379CDB1C63EDF6000F2017 /* SystemConfiguration */,
 				93379CD01C639586000F2017 /* SqlLite */,
 				93B9BCC61C633EE300CE0689 /* Toast */,
@@ -399,6 +411,7 @@
 		93F002951C5E04530060A991 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				93F98FAF1C679DAD009A7DC0 /* FlavorTableViewCell */,
 				93F98F931C664AA8009A7DC0 /* RatingCollectionViewCell */,
 				93F98F8B1C662E39009A7DC0 /* RecipeTableViewCell */,
 				9323C0D91C5EA767009CEC3B /* NoInternetView */,
@@ -463,6 +476,27 @@
 			name = RecipeDetail;
 			sourceTree = "<group>";
 		};
+		93F98FAF1C679DAD009A7DC0 /* FlavorTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				93F98FB01C679DE5009A7DC0 /* FlavorTableViewCell.h */,
+				93F98FB11C679DE5009A7DC0 /* FlavorTableViewCell.m */,
+				93F98FB21C679DE5009A7DC0 /* FlavorTableViewCell.xib */,
+			);
+			name = FlavorTableViewCell;
+			sourceTree = "<group>";
+		};
+		93F98FB51C67A041009A7DC0 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				93F98FB61C67A1E4009A7DC0 /* ASPopUpView.h */,
+				93F98FB71C67A1E4009A7DC0 /* ASPopUpView.m */,
+				93F98FB81C67A1E4009A7DC0 /* ASProgressPopUpView.h */,
+				93F98FB91C67A1E4009A7DC0 /* ASProgressPopUpView.m */,
+			);
+			name = Progress;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -491,6 +525,7 @@
 			attributes = {
 				KnownAssetTags = (
 					1,
+					2,
 					NoInternet,
 				);
 				LastUpgradeCheck = 0720;
@@ -529,6 +564,7 @@
 				93F98F981C664AC8009A7DC0 /* RatingCollectionViewCell.xib in Resources */,
 				93F98F901C662E78009A7DC0 /* RecipeTableViewCell.xib in Resources */,
 				93F98FAE1C677F4C009A7DC0 /* star-2.png in Resources */,
+				93F98FB41C679DE5009A7DC0 /* FlavorTableViewCell.xib in Resources */,
 				93379CD71C63B09D000F2017 /* yummly-api-logo.png in Resources */,
 				930B18491C615F3A00CB07FB /* play.png in Resources */,
 				93F98F9E1C6660F0009A7DC0 /* star.png in Resources */,
@@ -549,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F98FBB1C67A1E4009A7DC0 /* ASProgressPopUpView.m in Sources */,
 				93B9BCC51C633EDD00CE0689 /* NHToastService.m in Sources */,
 				93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */,
 				93F0029A1C5E05B60060A991 /* VideoTableViewCell.m in Sources */,
@@ -562,6 +599,7 @@
 				93F98F851C660B49009A7DC0 /* BrowseResultViewController.m in Sources */,
 				9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */,
 				9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */,
+				93F98FB31C679DE5009A7DC0 /* FlavorTableViewCell.m in Sources */,
 				9323C09B1C5E23D0009CEC3B /* NHVideoServices.m in Sources */,
 				93B9BCB61C63190F00CE0689 /* NHLoadingServices.swift in Sources */,
 				93F98F8A1C6613CD009A7DC0 /* NHRecipe.m in Sources */,
@@ -572,6 +610,7 @@
 				9323C0971C5E1EB3009CEC3B /* HomeViewController.m in Sources */,
 				93379CDF1C63EE2F000F2017 /* Reachability.m in Sources */,
 				93F98F8F1C662E78009A7DC0 /* RecipeTableViewCell.m in Sources */,
+				93F98FBA1C67A1E4009A7DC0 /* ASPopUpView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
