@@ -21,6 +21,7 @@
 		93379CD51C639773000F2017 /* NHDbContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 93379CD41C639773000F2017 /* NHDbContext.m */; };
 		93379CD71C63B09D000F2017 /* yummly-api-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 93379CD61C63B09D000F2017 /* yummly-api-logo.png */; };
 		93379CDF1C63EE2F000F2017 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 93379CDE1C63EE2F000F2017 /* Reachability.m */; };
+		9379F1F21C67D9780030D339 /* recipes.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9379F1F11C67D9780030D339 /* recipes.sqlite */; };
 		9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */; };
 		9398DE361C62A6FF009EF71C /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE351C62A6FF009EF71C /* CZPickerView.m */; };
 		93B9BCB61C63190F00CE0689 /* NHLoadingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCB51C63190F00CE0689 /* NHLoadingServices.swift */; };
@@ -77,6 +78,7 @@
 		93379CD61C63B09D000F2017 /* yummly-api-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yummly-api-logo.png"; sourceTree = "<group>"; };
 		93379CDD1C63EE2F000F2017 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		93379CDE1C63EE2F000F2017 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9379F1F11C67D9780030D339 /* recipes.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = recipes.sqlite; sourceTree = "<group>"; };
 		9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cooking Time-Bridging-Header.h"; sourceTree = "<group>"; };
 		9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLoadingActivity.swift; sourceTree = "<group>"; };
 		9398DE331C62A6FF009EF71C /* CZPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPicker.h; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		93379CD21C639760000F2017 /* DbContext */ = {
 			isa = PBXGroup;
 			children = (
+				9379F1F11C67D9780030D339 /* recipes.sqlite */,
 				93379CD31C639773000F2017 /* NHDbContext.h */,
 				93379CD41C639773000F2017 /* NHDbContext.m */,
 			);
@@ -573,6 +576,7 @@
 				93F98F9E1C6660F0009A7DC0 /* star.png in Resources */,
 				93F98FBD1C67AE9D009A7DC0 /* youtubeico.png in Resources */,
 				93F98FA81C671309009A7DC0 /* eat.jpg in Resources */,
+				9379F1F21C67D9780030D339 /* recipes.sqlite in Resources */,
 				9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */,
 				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,
 				9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */,

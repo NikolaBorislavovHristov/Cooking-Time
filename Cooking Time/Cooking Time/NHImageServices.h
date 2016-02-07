@@ -13,4 +13,9 @@
 
 +(void)getImage:(NSString *)imageURL
        callback:(void (^)(UIImage* image, NSString* errorMessage))callback;
+
++ (NSString *)imageToNSString:(UIImage *)image;
+
++ (UIImage *)stringToUIImage:(NSString *)string;
+
 @end

@@ -20,6 +20,10 @@
 @property (strong, nonatomic) NSString* recipeId;
 @property (strong, nonatomic) UIImage* smallImage;
 
+@property (strong, nonatomic) UIImage* photo;
+@property (strong, nonatomic) UIImage* audio;
+@property (strong, nonatomic) NSString* notes;
+
 +(instancetype) initWithImageUrl: (NSString*)imageUrl
                             name: (NSString*)name
                      ingredients: (NSArray*)ingredients

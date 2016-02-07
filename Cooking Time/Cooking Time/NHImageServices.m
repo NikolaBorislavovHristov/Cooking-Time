@@ -29,4 +29,16 @@
     }];
 }
 
++ (NSString *)imageToNSString:(UIImage *)image {
+    NSData *data = UIImagePNGRepresentation(image);
+    
+    return [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+}
+
++ (UIImage *)stringToUIImage:(NSString *)string {
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:string options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
+    return [UIImage imageWithData:data];
+}
+
 @end
