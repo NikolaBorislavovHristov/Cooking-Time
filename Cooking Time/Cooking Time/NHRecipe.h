@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NHRecipe : NSObject
 
@@ -16,12 +17,15 @@
 @property (strong, nonatomic) NSNumber* time;
 @property (strong, nonatomic) NSArray* flavors;
 @property (strong, nonatomic) NSNumber* rating;
+@property (strong, nonatomic) NSString* recipeId;
+@property (strong, nonatomic) UIImage* smallImage;
 
 +(instancetype) initWithImageUrl: (NSString*)imageUrl
                             name: (NSString*)name
                      ingredients: (NSArray*)ingredients
                             time: (NSNumber*)time
                          flavors: (NSArray*)flavors
+                        recipeId: (NSString*)recipeId
                        andRating: (NSNumber*)rating;
 
 @end

@@ -43,9 +43,10 @@
 		93F98F981C664AC8009A7DC0 /* RatingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F98F961C664AC8009A7DC0 /* RatingCollectionViewCell.xib */; };
 		93F98F9C1C665EFE009A7DC0 /* NHImageServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98F9B1C665EFE009A7DC0 /* NHImageServices.m */; };
 		93F98F9E1C6660F0009A7DC0 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F98F9D1C6660F0009A7DC0 /* star.png */; };
-		93F98FA21C668242009A7DC0 /* RecipeDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98FA11C668242009A7DC0 /* RecipeDetail.m */; };
+		93F98FA21C668242009A7DC0 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98FA11C668242009A7DC0 /* RecipeDetailViewController.m */; };
 		93F98FA81C671309009A7DC0 /* eat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FA71C671309009A7DC0 /* eat.jpg */; };
 		93F98FAC1C67307D009A7DC0 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FAB1C67307D009A7DC0 /* launch.png */; };
+		93F98FAE1C677F4C009A7DC0 /* star-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FAD1C677F4C009A7DC0 /* star-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,10 +109,11 @@
 		93F98F9A1C665EFE009A7DC0 /* NHImageServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHImageServices.h; sourceTree = "<group>"; };
 		93F98F9B1C665EFE009A7DC0 /* NHImageServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHImageServices.m; sourceTree = "<group>"; };
 		93F98F9D1C6660F0009A7DC0 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		93F98FA01C668242009A7DC0 /* RecipeDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetail.h; sourceTree = "<group>"; };
-		93F98FA11C668242009A7DC0 /* RecipeDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetail.m; sourceTree = "<group>"; };
+		93F98FA01C668242009A7DC0 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
+		93F98FA11C668242009A7DC0 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		93F98FA71C671309009A7DC0 /* eat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eat.jpg; sourceTree = "<group>"; };
 		93F98FAB1C67307D009A7DC0 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		93F98FAD1C677F4C009A7DC0 /* star-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				93F98FAB1C67307D009A7DC0 /* launch.png */,
 				93F98FA71C671309009A7DC0 /* eat.jpg */,
 				93F98F9D1C6660F0009A7DC0 /* star.png */,
+				93F98FAD1C677F4C009A7DC0 /* star-2.png */,
 				93BCF4A91C63F8BC006DF2FA /* no-image.png */,
 				93379CD61C63B09D000F2017 /* yummly-api-logo.png */,
 				930B18481C615F3A00CB07FB /* play.png */,
@@ -454,8 +457,8 @@
 		93F98F9F1C668215009A7DC0 /* RecipeDetail */ = {
 			isa = PBXGroup;
 			children = (
-				93F98FA01C668242009A7DC0 /* RecipeDetail.h */,
-				93F98FA11C668242009A7DC0 /* RecipeDetail.m */,
+				93F98FA01C668242009A7DC0 /* RecipeDetailViewController.h */,
+				93F98FA11C668242009A7DC0 /* RecipeDetailViewController.m */,
 			);
 			name = RecipeDetail;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				93BCF4AA1C63F8BC006DF2FA /* no-image.png in Resources */,
 				93F98F981C664AC8009A7DC0 /* RatingCollectionViewCell.xib in Resources */,
 				93F98F901C662E78009A7DC0 /* RecipeTableViewCell.xib in Resources */,
+				93F98FAE1C677F4C009A7DC0 /* star-2.png in Resources */,
 				93379CD71C63B09D000F2017 /* yummly-api-logo.png in Resources */,
 				930B18491C615F3A00CB07FB /* play.png in Resources */,
 				93F98F9E1C6660F0009A7DC0 /* star.png in Resources */,
@@ -564,7 +568,7 @@
 				930B184D1C61C42700CB07FB /* BrowseViewController.m in Sources */,
 				93F98F9C1C665EFE009A7DC0 /* NHImageServices.m in Sources */,
 				93D57DBD1C653AF400726B3D /* NHRecipeServices.m in Sources */,
-				93F98FA21C668242009A7DC0 /* RecipeDetail.m in Sources */,
+				93F98FA21C668242009A7DC0 /* RecipeDetailViewController.m in Sources */,
 				9323C0971C5E1EB3009CEC3B /* HomeViewController.m in Sources */,
 				93379CDF1C63EE2F000F2017 /* Reachability.m in Sources */,
 				93F98F8F1C662E78009A7DC0 /* RecipeTableViewCell.m in Sources */,

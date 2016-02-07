@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NHRecipe.h"
 
-@interface RecipeDetail : UIViewController
+@interface RecipeDetailViewController : UIViewController
 
 @property (strong, nonatomic) NHRecipe *recipe;
-@property (strong, nonatomic) UIImage *tempImage;
 
 @end

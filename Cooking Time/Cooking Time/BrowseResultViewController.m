@@ -14,7 +14,7 @@
 #import "NHToastService.h"
 #import "RecipeTableViewCell.h"
 #import "NHImageServices.h"
-#import "RecipeDetail.h"
+#import "RecipeDetailViewController.h"
 
 @interface BrowseResultViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -105,6 +105,7 @@ static NSString* cellIdentifire = @"RecipeTableViewCell";
             RecipeTableViewCell *updateCell = (RecipeTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
             if (updateCell) {
                 updateCell.image.image = image;
+                currentRecipe.smallImage = image;
             }
         });
     }];
@@ -123,14 +124,9 @@ static NSString* cellIdentifire = @"RecipeTableViewCell";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqual:@"showDetail"]) {
         NSIndexPath *indexPath = (NSIndexPath *)sender;
-        
         NHRecipe *selectedRecipe = [self.recipes objectAtIndex:indexPath.row];
-        RecipeTableViewCell *selectedCell = (RecipeTableViewCell *)[self.recipesTableView cellForRowAtIndexPath:indexPath];
-        UIImage *tempImage = selectedCell.image.image;
-        
-        RecipeDetail *recipeDetailController = (RecipeDetail *)segue.destinationViewController;
+        RecipeDetailViewController *recipeDetailController = (RecipeDetailViewController *)segue.destinationViewController;
         recipeDetailController.recipe = selectedRecipe;
-        recipeDetailController.tempImage = tempImage;
     }
 }
 @end

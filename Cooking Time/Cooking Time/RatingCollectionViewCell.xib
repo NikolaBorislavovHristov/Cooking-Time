@@ -13,7 +13,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="RYB-8N-iMP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="RYB-8N-iMP">
                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                     </imageView>
                 </subviews>
@@ -29,6 +29,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="star.png" width="64" height="64"/>
+        <image name="star-2.png" width="298" height="285"/>
     </resources>
 </document>

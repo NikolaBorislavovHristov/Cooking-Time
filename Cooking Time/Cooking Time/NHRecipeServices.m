@@ -51,6 +51,7 @@
             for (int i = 0; i < recipesRawData.count; i++) {
                 NSDictionary *currentRecipeRawData = [recipesRawData objectAtIndex:i];
     
+                NSString *recipeId = [currentRecipeRawData valueForKey:@"id"];
                 NSString *imageUrl = [[currentRecipeRawData valueForKey:@"imageUrlsBySize"]
                                       valueForKey:@"90"];
     
@@ -66,9 +67,11 @@
                                                          ingredients:ingredients
                                                                 time:time
                                                              flavors:flavors
+                                                             recipeId:recipeId
                                                            andRating:rating];
                 [recipes addObject:currentRecipe];
             }
+    
     callback(recipes, nil);
 }
 
