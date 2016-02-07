@@ -6,11 +6,15 @@
 //  Copyright © 2016 Nikola Hristov. All rights reserved.
 //
 
-#import "HomeViewController.h"
 #import "NHVideosServices.h"
 #import "VideoCell.h"
-#import "NoInternetView.h"
 #import "NHVideo.h"
+#import "NoInternetView.h"
+#import "Cooking_Time-Swift.h"
+#import "HomeViewController.h"
+#import "Reachability.h"
+#import "Toast.h"
+#import "ImageServices.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *topBar;
 @property NSMutableArray* videos;
 @property NoInternetView* noInternetView;
+@property BOOL isLoading;
 
 @end
 
@@ -27,11 +32,14 @@ static NSString* cellIdentifire = @"VideoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isLoading = NO;
+    self.videosTableView.allowsSelection = NO;
     self.videosTableView.dataSource = self;
     self.videosTableView.delegate = self;
     
     UINib* nib = [UINib nibWithNibName:cellIdentifire
                                 bundle:nil];
+    
     [self.videosTableView registerNib:nib
                forCellReuseIdentifier:cellIdentifire];
     
@@ -40,74 +48,101 @@ static NSString* cellIdentifire = @"VideoCell";
                                                                          options:nil]
                                              objectAtIndex:0];
     
-    [self loadVideos];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [self.videosTableView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(loadVideos) forControlEvents:UIControlEventValueChanged];
 }
 
--(void) loadVideos{
-    [NHVideosServices getNewestVideos:^(NSArray *videos, NSString *errorMessage) {
-        if (errorMessage) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if ([[self.view subviews] containsObject:self.noInternetView]) {
-                    return;
-                }
-                
-                __weak typeof(self) weakSelf = self;
-                [self.noInternetView setReloadCallback:^{
-                    [weakSelf loadVideos];
-                }];
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.isLoading == YES) {
+        [LoadingServices show];
+    } else {
+        [self loadVideos];
+    }
+}
+-(void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.isLoading == YES) {
+        [LoadingServices hide];
+    }
+}
 
-                self.noInternetView.translatesAutoresizingMaskIntoConstraints = NO;
-                [self.view addSubview:self.noInternetView];
-                
-                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
-                                                                          attribute:NSLayoutAttributeTop
-                                                                          relatedBy:NSLayoutRelationEqual
-                                                                             toItem:self.topBar
-                                                                          attribute:NSLayoutAttributeTop
-                                                                         multiplier:1.0
-                                                                           constant:0.0]];
-                
-                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
-                                                                          attribute:NSLayoutAttributeLeading
-                                                                          relatedBy:NSLayoutRelationEqual
-                                                                             toItem:self.view
-                                                                          attribute:NSLayoutAttributeLeading
-                                                                         multiplier:1.0
-                                                                           constant:0.0]];
-                
-                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
-                                                                          attribute:NSLayoutAttributeBottom
-                                                                          relatedBy:NSLayoutRelationEqual
-                                                                             toItem:self.bottomLayoutGuide
-                                                                          attribute:NSLayoutAttributeBottom
-                                                                         multiplier:1.0
-                                                                           constant:0.0]];
-                
-                [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
-                                                                          attribute:NSLayoutAttributeTrailing
-                                                                          relatedBy:NSLayoutRelationEqual
-                                                                             toItem:self.view
-                                                                          attribute:NSLayoutAttributeTrailing
-                                                                         multiplier:1.0
-                                                                           constant:0.0]];
-                
-                [self.view layoutIfNeeded];
-            });
-        } else {
-            self.videos = [NSMutableArray arrayWithArray:videos];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if ([[self.view subviews] containsObject:self.noInternetView]) {
-                    [self.noInternetView removeFromSuperview];
-                    [self.view layoutIfNeeded];
-                }
-                
-                //Used to show the loading animation
-                //[NSThread sleepForTimeInterval:3.0f];
-                
-                [self.videosTableView reloadData];
-            });
-        }
-    }];
+-(void) loadVideos {
+    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([[self.view subviews] containsObject:self.noInternetView]) {
+                return;
+            }
+            
+            __weak typeof(self) weakSelf = self;
+            [self.noInternetView setReloadCallback:^{
+                [weakSelf loadVideos];
+            }];
+            
+            self.noInternetView.translatesAutoresizingMaskIntoConstraints = NO;
+            [self.view addSubview:self.noInternetView];
+            
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
+                                                                  attribute:NSLayoutAttributeTop
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.topBar
+                                                                  attribute:NSLayoutAttributeTop
+                                                                 multiplier:1.0
+                                                                   constant:0.0]];
+            
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
+                                                                  attribute:NSLayoutAttributeLeading
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.view
+                                                                  attribute:NSLayoutAttributeLeading
+                                                                 multiplier:1.0
+                                                                   constant:0.0]];
+            
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
+                                                                  attribute:NSLayoutAttributeBottom
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.bottomLayoutGuide
+                                                                  attribute:NSLayoutAttributeBottom
+                                                                 multiplier:1.0
+                                                                   constant:0.0]];
+            
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.noInternetView
+                                                                  attribute:NSLayoutAttributeTrailing
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.view
+                                                                  attribute:NSLayoutAttributeTrailing
+                                                                 multiplier:1.0
+                                                                   constant:0.0]];
+            
+            [self.view layoutIfNeeded];
+        });
+    } else {
+        self.isLoading = YES;
+        [LoadingServices show];
+        
+        [NHVideosServices getNewestVideos:^(NSArray *videos, NSString *errorMessage) {
+            self.isLoading = NO;
+            
+            if (errorMessage) {
+                [LoadingServices fail];
+                [Toast showWithText:errorMessage];
+            } else {
+                [LoadingServices success];
+                self.videos = [NSMutableArray arrayWithArray:videos];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if ([[self.view subviews] containsObject:self.noInternetView]) {
+                        [self.noInternetView removeFromSuperview];
+                        [self.view layoutIfNeeded];
+                    }
+                    
+                    [self.videosTableView reloadData];
+                });
+            }
+        }];
+
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -117,9 +152,8 @@ static NSString* cellIdentifire = @"VideoCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NHVideo *currentVideo = [self.videos objectAtIndex:indexPath.row];
     VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifire forIndexPath:indexPath];
-//    UIImage *defaultImage = [UIImage animatedImageNamed:@"frame-" duration:0.5f];
-//    UIGifImage *gif = [[UIGifImage alloc] ];
-    cell.cellImage.image = nil;
+    
+    cell.cellImage.image = [UIImage imageNamed: @"no-image.png"];
     cell.cellLabel.text = currentVideo.title;
     cell.videoURL = currentVideo.videoURL;
     
@@ -136,10 +170,8 @@ static NSString* cellIdentifire = @"VideoCell";
                                                alpha:1];
     }
 
-    [NHVideosServices getVideoImage:currentVideo.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
+    [ImageServices getImage:currentVideo.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            //            [NSThread sleepForTimeInterval:3.0f];
-            NSLog(@"image");
             VideoCell *updateCell = (VideoCell *)[tableView cellForRowAtIndexPath:indexPath];
             if (updateCell) {
                 updateCell.cellImage.image = image;

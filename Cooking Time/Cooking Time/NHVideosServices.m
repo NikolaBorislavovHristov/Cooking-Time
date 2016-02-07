@@ -9,7 +9,6 @@
 #import "NHVideosServices.h"
 #import "NHHttpClient.h"
 #import "NHVideo.h"
-#import "RequestState.m"
 
 @implementation NHVideosServices
 
@@ -62,24 +61,6 @@
         }
         
         callback(videos, nil);
-    }];
-}
-
-+(void)getVideoImage:(NSString *)imageURL
-            callback:(void (^)(UIImage* image, NSString* errorMessage))callback; {
-    
-    NHHttpClient *client = [NHHttpClient withEndpointURL:imageURL];
-    
-    [client send:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (data) {
-            UIImage *image = [UIImage imageWithData:data];
-            if (image) {
-                callback(image, nil);
-                return;
-            }
-        }
-        
-        callback(nil, @"Image not found!");
     }];
 }
 

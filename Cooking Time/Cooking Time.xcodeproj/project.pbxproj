@@ -19,20 +19,33 @@
 		9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323C0DD1C5EA8A0009CEC3B /* NoInternetView.m */; };
 		93379CCF1C639570000F2017 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93379CCE1C639570000F2017 /* libsqlite3.tbd */; };
 		93379CD51C639773000F2017 /* NHDbContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 93379CD41C639773000F2017 /* NHDbContext.m */; };
+		93379CD71C63B09D000F2017 /* yummly-api-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 93379CD61C63B09D000F2017 /* yummly-api-logo.png */; };
+		93379CDF1C63EE2F000F2017 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 93379CDE1C63EE2F000F2017 /* Reachability.m */; };
 		9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */; };
 		9398DE361C62A6FF009EF71C /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398DE351C62A6FF009EF71C /* CZPickerView.m */; };
 		93B9BCB61C63190F00CE0689 /* LoadingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCB51C63190F00CE0689 /* LoadingServices.swift */; };
 		93B9BCBB1C63248A00CE0689 /* Picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCBA1C63248A00CE0689 /* Picker.m */; };
 		93B9BCC21C633D8D00CE0689 /* KSToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCC11C633D8D00CE0689 /* KSToastView.m */; };
 		93B9BCC51C633EDD00CE0689 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9BCC41C633EDD00CE0689 /* Toast.m */; };
-		93B9BCC81C634DD900CE0689 /* loadingresource.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B9BCC71C634DD900CE0689 /* loadingresource.gif */; };
-		93B9BCCA1C6354E300CE0689 /* loadingGIF in Resources */ = {isa = PBXBuildFile; fileRef = 93B9BCC91C6354E300CE0689 /* loadingGIF */; };
+		93BCF4A81C63F546006DF2FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BCF4A71C63F546006DF2FA /* SystemConfiguration.framework */; };
+		93BCF4AA1C63F8BC006DF2FA /* no-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BCF4A91C63F8BC006DF2FA /* no-image.png */; };
+		93D57DBD1C653AF400726B3D /* NHRecipesServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D57DBC1C653AF400726B3D /* NHRecipesServices.m */; };
 		93F001871C5CA1D10060A991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001861C5CA1D10060A991 /* main.m */; };
 		93F0018A1C5CA1D10060A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F001891C5CA1D10060A991 /* AppDelegate.m */; };
 		93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F001941C5CA1D10060A991 /* Assets.xcassets */; };
 		93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F001961C5CA1D10060A991 /* LaunchScreen.storyboard */; };
 		93F002971C5E04750060A991 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F002961C5E04750060A991 /* VideoCell.xib */; };
 		93F0029A1C5E05B60060A991 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F002991C5E05B60060A991 /* VideoCell.m */; };
+		93F98F851C660B49009A7DC0 /* BrowseResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98F841C660B49009A7DC0 /* BrowseResultViewController.m */; };
+		93F98F8A1C6613CD009A7DC0 /* NHRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98F891C6613CD009A7DC0 /* NHRecipe.m */; };
+		93F98F8F1C662E78009A7DC0 /* RecipeCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98F8D1C662E78009A7DC0 /* RecipeCellTableViewCell.m */; };
+		93F98F901C662E78009A7DC0 /* RecipeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F98F8E1C662E78009A7DC0 /* RecipeCellTableViewCell.xib */; };
+		93F98F971C664AC8009A7DC0 /* RatingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98F951C664AC8009A7DC0 /* RatingCollectionViewCell.m */; };
+		93F98F981C664AC8009A7DC0 /* RatingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F98F961C664AC8009A7DC0 /* RatingCollectionViewCell.xib */; };
+		93F98F9C1C665EFE009A7DC0 /* ImageServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98F9B1C665EFE009A7DC0 /* ImageServices.m */; };
+		93F98F9E1C6660F0009A7DC0 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F98F9D1C6660F0009A7DC0 /* star.png */; };
+		93F98FA21C668242009A7DC0 /* RecipeDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F98FA11C668242009A7DC0 /* RecipeDetail.m */; };
+		93F98FA81C671309009A7DC0 /* eat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93F98FA71C671309009A7DC0 /* eat.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +68,9 @@
 		93379CCE1C639570000F2017 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		93379CD31C639773000F2017 /* NHDbContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHDbContext.h; sourceTree = "<group>"; };
 		93379CD41C639773000F2017 /* NHDbContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHDbContext.m; sourceTree = "<group>"; };
+		93379CD61C63B09D000F2017 /* yummly-api-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yummly-api-logo.png"; sourceTree = "<group>"; };
+		93379CDD1C63EE2F000F2017 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		93379CDE1C63EE2F000F2017 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cooking Time-Bridging-Header.h"; sourceTree = "<group>"; };
 		9398DE2F1C628D3C009EF71C /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLoadingActivity.swift; sourceTree = "<group>"; };
 		9398DE331C62A6FF009EF71C /* CZPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPicker.h; sourceTree = "<group>"; };
@@ -67,8 +83,10 @@
 		93B9BCC11C633D8D00CE0689 /* KSToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSToastView.m; sourceTree = "<group>"; };
 		93B9BCC31C633EDD00CE0689 /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		93B9BCC41C633EDD00CE0689 /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
-		93B9BCC71C634DD900CE0689 /* loadingresource.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loadingresource.gif; sourceTree = "<group>"; };
-		93B9BCC91C6354E300CE0689 /* loadingGIF */ = {isa = PBXFileReference; lastKnownFileType = folder; path = loadingGIF; sourceTree = "<group>"; };
+		93BCF4A71C63F546006DF2FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		93BCF4A91C63F8BC006DF2FA /* no-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-image.png"; sourceTree = "<group>"; };
+		93D57DBB1C653AF400726B3D /* NHRecipesServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHRecipesServices.h; sourceTree = "<group>"; };
+		93D57DBC1C653AF400726B3D /* NHRecipesServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHRecipesServices.m; sourceTree = "<group>"; };
 		93F001821C5CA1D10060A991 /* Cooking Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cooking Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F001861C5CA1D10060A991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93F001881C5CA1D10060A991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +97,22 @@
 		93F002961C5E04750060A991 /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		93F002981C5E05B60060A991 /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
 		93F002991C5E05B60060A991 /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
+		93F98F831C660B49009A7DC0 /* BrowseResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseResultViewController.h; sourceTree = "<group>"; };
+		93F98F841C660B49009A7DC0 /* BrowseResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseResultViewController.m; sourceTree = "<group>"; };
+		93F98F881C6613CD009A7DC0 /* NHRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHRecipe.h; sourceTree = "<group>"; };
+		93F98F891C6613CD009A7DC0 /* NHRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHRecipe.m; sourceTree = "<group>"; };
+		93F98F8C1C662E78009A7DC0 /* RecipeCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCellTableViewCell.h; sourceTree = "<group>"; };
+		93F98F8D1C662E78009A7DC0 /* RecipeCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCellTableViewCell.m; sourceTree = "<group>"; };
+		93F98F8E1C662E78009A7DC0 /* RecipeCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeCellTableViewCell.xib; sourceTree = "<group>"; };
+		93F98F941C664AC8009A7DC0 /* RatingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingCollectionViewCell.h; sourceTree = "<group>"; };
+		93F98F951C664AC8009A7DC0 /* RatingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingCollectionViewCell.m; sourceTree = "<group>"; };
+		93F98F961C664AC8009A7DC0 /* RatingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingCollectionViewCell.xib; sourceTree = "<group>"; };
+		93F98F9A1C665EFE009A7DC0 /* ImageServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageServices.h; sourceTree = "<group>"; };
+		93F98F9B1C665EFE009A7DC0 /* ImageServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageServices.m; sourceTree = "<group>"; };
+		93F98F9D1C6660F0009A7DC0 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		93F98FA01C668242009A7DC0 /* RecipeDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetail.h; sourceTree = "<group>"; };
+		93F98FA11C668242009A7DC0 /* RecipeDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetail.m; sourceTree = "<group>"; };
+		93F98FA71C671309009A7DC0 /* eat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eat.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BCF4A81C63F546006DF2FA /* SystemConfiguration.framework in Frameworks */,
 				93379CCF1C639570000F2017 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +140,8 @@
 		9323C0901C5E1D27009CEC3B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				93F98F9F1C668215009A7DC0 /* RecipeDetail */,
+				93D57DC21C65D58500726B3D /* BrowseResult */,
 				930B184A1C61C3F700CB07FB /* Browse */,
 				9323C0911C5E1D5E009CEC3B /* Home */,
 			);
@@ -132,8 +169,8 @@
 		9323C09C1C5E2404009CEC3B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9323C09D1C5E2413009CEC3B /* NHVideo.h */,
-				9323C09E1C5E2413009CEC3B /* NHVideo.m */,
+				93F98F871C6613B9009A7DC0 /* Recipe */,
+				93F98F861C6613AC009A7DC0 /* Video */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -150,8 +187,10 @@
 		9323C0D41C5EA6A9009CEC3B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				93B9BCC91C6354E300CE0689 /* loadingGIF */,
-				93B9BCC71C634DD900CE0689 /* loadingresource.gif */,
+				93F98FA71C671309009A7DC0 /* eat.jpg */,
+				93F98F9D1C6660F0009A7DC0 /* star.png */,
+				93BCF4A91C63F8BC006DF2FA /* no-image.png */,
+				93379CD61C63B09D000F2017 /* yummly-api-logo.png */,
 				930B18481C615F3A00CB07FB /* play.png */,
 				9323C0D51C5EA6BF009CEC3B /* chromedino.jpg */,
 			);
@@ -204,9 +243,28 @@
 			name = DbContext;
 			sourceTree = "<group>";
 		};
+		93379CDB1C63EDF6000F2017 /* SystemConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				93BCF4A71C63F546006DF2FA /* SystemConfiguration.framework */,
+				93379CDC1C63EE07000F2017 /* Reachability */,
+			);
+			name = SystemConfiguration;
+			sourceTree = "<group>";
+		};
+		93379CDC1C63EE07000F2017 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				93379CDD1C63EE2F000F2017 /* Reachability.h */,
+				93379CDE1C63EE2F000F2017 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		9398DE2D1C628D2A009EF71C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				93379CDB1C63EDF6000F2017 /* SystemConfiguration */,
 				93379CD01C639586000F2017 /* SqlLite */,
 				93B9BCC61C633EE300CE0689 /* Toast */,
 				9398DE321C62A6D4009EF71C /* Picker */,
@@ -268,6 +326,24 @@
 			name = Toast;
 			sourceTree = "<group>";
 		};
+		93D57DBA1C653AD300726B3D /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				93D57DBB1C653AF400726B3D /* NHRecipesServices.h */,
+				93D57DBC1C653AF400726B3D /* NHRecipesServices.m */,
+			);
+			name = Recipes;
+			sourceTree = "<group>";
+		};
+		93D57DC21C65D58500726B3D /* BrowseResult */ = {
+			isa = PBXGroup;
+			children = (
+				93F98F831C660B49009A7DC0 /* BrowseResultViewController.h */,
+				93F98F841C660B49009A7DC0 /* BrowseResultViewController.m */,
+			);
+			name = BrowseResult;
+			sourceTree = "<group>";
+		};
 		93F001791C5CA1D10060A991 = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				9323C0D21C5E8EDC009CEC3B /* Main.storyboard */,
+				93F002951C5E04530060A991 /* CustomViews */,
 				9323C0901C5E1D27009CEC3B /* Scenes */,
 				9323C0D41C5EA6A9009CEC3B /* Images */,
 				9323C0A31C5E4333009CEC3B /* Data */,
@@ -301,7 +378,6 @@
 		93F001851C5CA1D10060A991 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				93F002951C5E04530060A991 /* CustomViews */,
 				9398DE2D1C628D2A009EF71C /* Libs */,
 				93F001941C5CA1D10060A991 /* Assets.xcassets */,
 				9398DE2E1C628D3B009EF71C /* Cooking Time-Bridging-Header.h */,
@@ -317,6 +393,8 @@
 		93F002941C5DFA570060A991 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				93F98F991C665EE0009A7DC0 /* Images */,
+				93D57DBA1C653AD300726B3D /* Recipes */,
 				93B9BCBC1C63265600CE0689 /* Toast */,
 				93B9BCB81C63247200CE0689 /* Picker */,
 				93B9BCB71C6319DF00CE0689 /* Loading */,
@@ -328,10 +406,68 @@
 		93F002951C5E04530060A991 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				93F98F931C664AA8009A7DC0 /* RatingCell */,
+				93F98F8B1C662E39009A7DC0 /* RicipeCell */,
 				9323C0D91C5EA767009CEC3B /* NoInternet */,
 				9323C0D81C5EA756009CEC3B /* VideoCell */,
 			);
 			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		93F98F861C6613AC009A7DC0 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				9323C09D1C5E2413009CEC3B /* NHVideo.h */,
+				9323C09E1C5E2413009CEC3B /* NHVideo.m */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
+		93F98F871C6613B9009A7DC0 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				93F98F881C6613CD009A7DC0 /* NHRecipe.h */,
+				93F98F891C6613CD009A7DC0 /* NHRecipe.m */,
+			);
+			name = Recipe;
+			sourceTree = "<group>";
+		};
+		93F98F8B1C662E39009A7DC0 /* RicipeCell */ = {
+			isa = PBXGroup;
+			children = (
+				93F98F8C1C662E78009A7DC0 /* RecipeCellTableViewCell.h */,
+				93F98F8D1C662E78009A7DC0 /* RecipeCellTableViewCell.m */,
+				93F98F8E1C662E78009A7DC0 /* RecipeCellTableViewCell.xib */,
+			);
+			name = RicipeCell;
+			sourceTree = "<group>";
+		};
+		93F98F931C664AA8009A7DC0 /* RatingCell */ = {
+			isa = PBXGroup;
+			children = (
+				93F98F941C664AC8009A7DC0 /* RatingCollectionViewCell.h */,
+				93F98F951C664AC8009A7DC0 /* RatingCollectionViewCell.m */,
+				93F98F961C664AC8009A7DC0 /* RatingCollectionViewCell.xib */,
+			);
+			name = RatingCell;
+			sourceTree = "<group>";
+		};
+		93F98F991C665EE0009A7DC0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				93F98F9A1C665EFE009A7DC0 /* ImageServices.h */,
+				93F98F9B1C665EFE009A7DC0 /* ImageServices.m */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		93F98F9F1C668215009A7DC0 /* RecipeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				93F98FA01C668242009A7DC0 /* RecipeDetail.h */,
+				93F98FA11C668242009A7DC0 /* RecipeDetail.m */,
+			);
+			name = RecipeDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,11 +531,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BCF4AA1C63F8BC006DF2FA /* no-image.png in Resources */,
+				93F98F981C664AC8009A7DC0 /* RatingCollectionViewCell.xib in Resources */,
+				93F98F901C662E78009A7DC0 /* RecipeCellTableViewCell.xib in Resources */,
+				93379CD71C63B09D000F2017 /* yummly-api-logo.png in Resources */,
 				930B18491C615F3A00CB07FB /* play.png in Resources */,
+				93F98F9E1C6660F0009A7DC0 /* star.png in Resources */,
+				93F98FA81C671309009A7DC0 /* eat.jpg in Resources */,
 				9323C0DB1C5EA78B009CEC3B /* NoInternetView.xib in Resources */,
 				93F001981C5CA1D10060A991 /* LaunchScreen.storyboard in Resources */,
-				93B9BCC81C634DD900CE0689 /* loadingresource.gif in Resources */,
-				93B9BCCA1C6354E300CE0689 /* loadingGIF in Resources */,
 				9323C0D61C5EA6BF009CEC3B /* chromedino.jpg in Resources */,
 				93F002971C5E04750060A991 /* VideoCell.xib in Resources */,
 				93F001951C5CA1D10060A991 /* Assets.xcassets in Resources */,
@@ -423,13 +563,21 @@
 				9398DE301C628D3C009EF71C /* EZLoadingActivity.swift in Sources */,
 				9323C0A61C5E4350009CEC3B /* NHHttpClient.m in Sources */,
 				93F001871C5CA1D10060A991 /* main.m in Sources */,
+				93F98F971C664AC8009A7DC0 /* RatingCollectionViewCell.m in Sources */,
 				93379CD51C639773000F2017 /* NHDbContext.m in Sources */,
+				93F98F851C660B49009A7DC0 /* BrowseResultViewController.m in Sources */,
 				9323C0DE1C5EA8A0009CEC3B /* NoInternetView.m in Sources */,
 				9323C09F1C5E2413009CEC3B /* NHVideo.m in Sources */,
 				9323C09B1C5E23D0009CEC3B /* NHVideosServices.m in Sources */,
 				93B9BCB61C63190F00CE0689 /* LoadingServices.swift in Sources */,
+				93F98F8A1C6613CD009A7DC0 /* NHRecipe.m in Sources */,
 				930B184D1C61C42700CB07FB /* BrowseViewController.m in Sources */,
+				93F98F9C1C665EFE009A7DC0 /* ImageServices.m in Sources */,
+				93D57DBD1C653AF400726B3D /* NHRecipesServices.m in Sources */,
+				93F98FA21C668242009A7DC0 /* RecipeDetail.m in Sources */,
 				9323C0971C5E1EB3009CEC3B /* HomeViewController.m in Sources */,
+				93379CDF1C63EE2F000F2017 /* Reachability.m in Sources */,
+				93F98F8F1C662E78009A7DC0 /* RecipeCellTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +683,10 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Cooking Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anarhisthristov.Cooking-Time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cooking Time/Cooking Time-Bridging-Header.h";
@@ -550,6 +702,10 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Cooking Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anarhisthristov.Cooking-Time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cooking Time/Cooking Time-Bridging-Header.h";

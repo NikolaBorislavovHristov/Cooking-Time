@@ -10,7 +10,7 @@
 
 @interface NHHttpClient : NSObject
 
-+(NHHttpClient*) withEndpointURL:(NSString*)endpointURL;
++(instancetype) withEndpointURL: (NSString*)endpointURL;
 
 -(void) send: (void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))callback;
 

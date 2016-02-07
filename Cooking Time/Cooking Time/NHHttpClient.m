@@ -15,7 +15,7 @@
 
 @implementation NHHttpClient
 
-+(NHHttpClient*) withEndpointURL:(NSString*)endpointURL; {
++(instancetype) withEndpointURL:(NSString*)endpointURL; {
     NHHttpClient *req = [[NHHttpClient alloc] init];
     req.endpointURL = endpointURL;
     return req;

@@ -7,21 +7,24 @@
 //
 
 #import "BrowseViewController.h"
+#import "BrowseResultViewController.h"
 #import "UIKit/UIKit.h"
 #import "CZPickerView.h"
 #import "Cooking_Time-Swift.h"
 #import "Toast.h"
+#import "NHRecipesServices.h"
 
 @interface BrowseViewController () <UITextFieldDelegate, CZPickerViewDataSource, CZPickerViewDelegate>
 
-@property (weak, nonatomic) NSMutableArray *ingredients;
 @property (weak, nonatomic) IBOutlet UITextField *phraseField;
+@property (weak, nonatomic) IBOutlet UISwitch *requirePicture;
+@property (weak, nonatomic) IBOutlet UISlider *durationSlider;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 - (IBAction)removeIngredientOnClick;
 - (IBAction)addIngredientOnClick;
 - (IBAction)listIngredientOnClick;
-@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
-@property (weak, nonatomic) IBOutlet UISlider *durationSlider;
 - (IBAction)durationSliderOnChange:(UISlider *)sender;
+@property NSMutableArray *ingredients;
 
 @end
 
@@ -29,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.ingredients = [NSMutableArray array];
+    self.ingredients = [[NSMutableArray alloc] init];
     self.phraseField.delegate = self;
 }
 
@@ -38,10 +41,10 @@
     return YES;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches
+              withEvent:event];
     [self.phraseField resignFirstResponder];
-    [LoadingServices hide];
-    [super touchesBegan:touches withEvent:event];
 }
 
 - (IBAction)removeIngredientOnClick {
@@ -96,10 +99,8 @@
 
 
 - (NSAttributedString *)czpickerView:(CZPickerView *)pickerView
-               attributedTitleForRow:(NSInteger)row{
-    
-    NSAttributedString *att = [[NSAttributedString alloc]
-                               initWithString:self.ingredients[row]];
+               attributedTitleForRow:(NSInteger)row {
+    NSAttributedString *att = [[NSAttributedString alloc] initWithString:self.ingredients[row]];
     return att;
 }
 
@@ -121,8 +122,26 @@
     
     [self.ingredients removeObjectsInArray:ingredientsToRemove];
 }
+
 - (IBAction)durationSliderOnChange:(UISlider *)sender {
     self.durationLabel.text = [NSString stringWithFormat:@"%d min", [[NSNumber numberWithFloat:sender.value]intValue]];
+}
+
+- (IBAction)unwindForSegue:(UIStoryboardSegue *)unwindSegue {
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showSearchResults"]){
+        NSDictionary *params = @{
+                                     @"phrase": self.phraseField.text,
+                                     @"requirePicture": [NSNumber numberWithBool: self.requirePicture.isOn],
+                                     @"ingredients": self.ingredients,
+                                     @"duration": [NSNumber numberWithFloat: self.durationSlider.value]
+                                     };
+        BrowseResultViewController *resultController = (BrowseResultViewController *)segue.destinationViewController;
+        resultController.doReloading = YES;
+        resultController.params = params;
+    }
 }
 @end
 

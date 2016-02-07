@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSString* videoURL;
 @property (strong, nonatomic) NSString* title;
 
-+(NHVideo*) initWithImageUrl: (NSString*)imageUrl
++(instancetype) initWithImageUrl: (NSString*)imageUrl
               videoURL: (NSString*)videoURL
               andTitle: (NSString*)title;
 
