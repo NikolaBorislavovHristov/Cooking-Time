@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BrowseResultViewController : UIViewController
+
 @property (strong, nonatomic) NSDictionary *params;
 @property BOOL doReloading;
+
 @end

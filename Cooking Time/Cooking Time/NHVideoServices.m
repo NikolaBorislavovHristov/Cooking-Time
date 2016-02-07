@@ -6,11 +6,11 @@
 //  Copyright © 2016 Nikola Hristov. All rights reserved.
 //
 
-#import "NHVideosServices.h"
+#import "NHVideoServices.h"
 #import "NHHttpClient.h"
 #import "NHVideo.h"
 
-@implementation NHVideosServices
+@implementation NHVideoServices
 
 +(void)getNewestVideos: (void (^)(NSArray* videos, NSString* errorMessage))callback;{
     NSString* endPoint = @"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=20&playlistId=PL8PM5J5RodlalW_XqjytpHnDx7AHh2IFT&fields=items%2Fsnippet&key=AIzaSyBBQyjFRp5FFKb5hbTrHYhi7vHNbuYm_yY";

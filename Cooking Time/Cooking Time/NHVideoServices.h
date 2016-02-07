@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface NHVideosServices : NSObject
+@interface NHVideoServices : NSObject
 
 +(void)getNewestVideos:(void (^)(NSArray* videos, NSString* errorMessage))callback;
 

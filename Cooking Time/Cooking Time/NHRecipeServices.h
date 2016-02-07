@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NHRecipe.h"
 
-@interface NHRecipesServices : NSObject
+@interface NHRecipeServices : NSObject
 
 +(void)searchByCriteria:(NSDictionary *)criteria
                callback:(void (^)(NSArray* recipes, NSString* errorMessage))callback;
+
++(void)getRecipeDetails:(NSString *)recipeId
+               callback:(void (^)(NHRecipe* recipe, NSString* errorMessage))callback;
+
 @end

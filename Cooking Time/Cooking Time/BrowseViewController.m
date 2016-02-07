@@ -8,11 +8,10 @@
 
 #import "BrowseViewController.h"
 #import "BrowseResultViewController.h"
-#import "UIKit/UIKit.h"
+#import "NHToastService.h"
+#import "NHRecipeServices.h"
 #import "CZPickerView.h"
 #import "Cooking_Time-Swift.h"
-#import "Toast.h"
-#import "NHRecipesServices.h"
 
 @interface BrowseViewController () <UITextFieldDelegate, CZPickerViewDataSource, CZPickerViewDelegate>
 
@@ -97,16 +96,11 @@
     [picker show];
 }
 
-
 - (NSAttributedString *)czpickerView:(CZPickerView *)pickerView
                attributedTitleForRow:(NSInteger)row {
+    NSLog(@"xxx");
     NSAttributedString *att = [[NSAttributedString alloc] initWithString:self.ingredients[row]];
     return att;
-}
-
-- (NSString *)czpickerView:(CZPickerView *)pickerView
-               titleForRow:(NSInteger)row{
-    return self.ingredients[row];
 }
 
 - (NSInteger)numberOfRowsInPickerView:(CZPickerView *)pickerView{
@@ -124,7 +118,7 @@
 }
 
 - (IBAction)durationSliderOnChange:(UISlider *)sender {
-    self.durationLabel.text = [NSString stringWithFormat:@"%d min", [[NSNumber numberWithFloat:sender.value]intValue]];
+    self.durationLabel.text = [NSString stringWithFormat:@"%d min", [[NSNumber numberWithFloat:sender.value] intValue]];
 }
 
 - (IBAction)unwindForSegue:(UIStoryboardSegue *)unwindSegue {
@@ -137,12 +131,14 @@
                                      @"requirePicture": [NSNumber numberWithBool: self.requirePicture.isOn],
                                      @"ingredients": self.ingredients,
                                      @"duration": [NSNumber numberWithFloat: self.durationSlider.value]
-                                     };
+                                };
+        
         BrowseResultViewController *resultController = (BrowseResultViewController *)segue.destinationViewController;
         resultController.doReloading = YES;
         resultController.params = params;
     }
 }
+
 @end
 
 

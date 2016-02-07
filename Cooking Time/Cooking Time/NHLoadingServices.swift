@@ -8,9 +8,9 @@
 
 import UIKit
 
-@objc class LoadingServices: NSObject {
-    static func show() {
-        EZLoadingActivity.show("Loading...", disableUI: false);
+@objc class NHLoadingServices: NSObject {
+    static func show(text: String) {
+        EZLoadingActivity.show(text, disableUI: false);
     }
     
     static func hide() {

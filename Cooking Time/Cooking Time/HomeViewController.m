@@ -6,15 +6,15 @@
 //  Copyright © 2016 Nikola Hristov. All rights reserved.
 //
 
-#import "NHVideosServices.h"
-#import "VideoCell.h"
-#import "NHVideo.h"
-#import "NoInternetView.h"
-#import "Cooking_Time-Swift.h"
 #import "HomeViewController.h"
+#import "NHVideoServices.h"
+#import "NHImageServices.h"
+#import "NHToastService.h"
+#import "VideoTableViewCell.h"
+#import "NoInternetView.h"
+#import "NHVideo.h"
 #import "Reachability.h"
-#import "Toast.h"
-#import "ImageServices.h"
+#import "Cooking_Time-Swift.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,17 +22,19 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *topBar;
 @property NSMutableArray* videos;
 @property NoInternetView* noInternetView;
-@property BOOL isLoading;
-
+@property BOOL isLoadingVideos;
+@property UIRefreshControl *refreshControl;
 @end
 
 @implementation HomeViewController
 
-static NSString* cellIdentifire = @"VideoCell";
+static NSString* defaultImageIdentifire = @"no-image.png";
+static NSString* cellIdentifire = @"VideoTableViewCell";
+static NSString* noInternetViewIdentifire = @"NoInternetView";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.isLoading = NO;
+    
     self.videosTableView.allowsSelection = NO;
     self.videosTableView.dataSource = self;
     self.videosTableView.delegate = self;
@@ -43,29 +45,34 @@ static NSString* cellIdentifire = @"VideoCell";
     [self.videosTableView registerNib:nib
                forCellReuseIdentifier:cellIdentifire];
     
-    self.noInternetView = (NoInternetView *)[[[NSBundle mainBundle] loadNibNamed:@"NoInternetView"
+    self.noInternetView = (NoInternetView *)[[[NSBundle mainBundle] loadNibNamed:noInternetViewIdentifire
                                                                            owner:self
                                                                          options:nil]
                                              objectAtIndex:0];
     
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [self.videosTableView addSubview:refreshControl];
-    [refreshControl addTarget:self action:@selector(loadVideos) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self
+                            action:@selector(loadVideos)
+                  forControlEvents:UIControlEventValueChanged];
+
+    [self.videosTableView addSubview:self.refreshControl];
+    
+    [self loadVideos];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.isLoading == YES) {
-        [LoadingServices show];
-    } else {
-        [self loadVideos];
+    if (self.isLoadingVideos == YES) {
+        [NHLoadingServices show:@"Loading videos..."];
     }
 }
+
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    if (self.isLoading == YES) {
-        [LoadingServices hide];
+    
+    if (self.isLoadingVideos == YES) {
+        [NHLoadingServices hide];
     }
 }
 
@@ -119,17 +126,17 @@ static NSString* cellIdentifire = @"VideoCell";
             [self.view layoutIfNeeded];
         });
     } else {
-        self.isLoading = YES;
-        [LoadingServices show];
+        self.isLoadingVideos = YES;
+        [NHLoadingServices show:@"Loading videos..."];
         
-        [NHVideosServices getNewestVideos:^(NSArray *videos, NSString *errorMessage) {
-            self.isLoading = NO;
+        [NHVideoServices getNewestVideos:^(NSArray *videos, NSString *errorMessage) {
+            self.isLoadingVideos = NO;
             
             if (errorMessage) {
-                [LoadingServices fail];
-                [Toast showWithText:errorMessage];
+                [NHLoadingServices fail];
+                [NHToastService showWithText:errorMessage];
             } else {
-                [LoadingServices success];
+                [NHLoadingServices success];
                 self.videos = [NSMutableArray arrayWithArray:videos];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if ([[self.view subviews] containsObject:self.noInternetView]) {
@@ -138,10 +145,10 @@ static NSString* cellIdentifire = @"VideoCell";
                     }
                     
                     [self.videosTableView reloadData];
+                    [self.refreshControl endRefreshing];
                 });
             }
         }];
-
     }
 }
 
@@ -151,9 +158,9 @@ static NSString* cellIdentifire = @"VideoCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NHVideo *currentVideo = [self.videos objectAtIndex:indexPath.row];
-    VideoCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifire forIndexPath:indexPath];
     
-    cell.cellImage.image = [UIImage imageNamed: @"no-image.png"];
+    VideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifire forIndexPath:indexPath];
+    cell.cellImage.image = [UIImage imageNamed: defaultImageIdentifire];
     cell.cellLabel.text = currentVideo.title;
     cell.videoURL = currentVideo.videoURL;
     
@@ -170,11 +177,11 @@ static NSString* cellIdentifire = @"VideoCell";
                                                alpha:1];
     }
 
-    [ImageServices getImage:currentVideo.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
+    [NHImageServices getImage:currentVideo.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            VideoCell *updateCell = (VideoCell *)[tableView cellForRowAtIndexPath:indexPath];
-            if (updateCell) {
-                updateCell.cellImage.image = image;
+            VideoTableViewCell *cellToUpdate = (VideoTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+            if (cellToUpdate) {
+                cellToUpdate.cellImage.image = image;
             }
         });
     }];

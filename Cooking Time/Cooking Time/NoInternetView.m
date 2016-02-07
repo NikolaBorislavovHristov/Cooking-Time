@@ -28,4 +28,5 @@
 -(void) setReloadCallback: (void (^)())withCallback; {
     self.callback = withCallback;
 }
+
 @end

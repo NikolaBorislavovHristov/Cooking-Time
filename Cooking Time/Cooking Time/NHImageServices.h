@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface ImageServices : NSObject
+@interface NHImageServices : NSObject
 
 +(void)getImage:(NSString *)imageURL
        callback:(void (^)(UIImage* image, NSString* errorMessage))callback;

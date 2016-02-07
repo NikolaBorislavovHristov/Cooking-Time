@@ -6,11 +6,10 @@
 //  Copyright © 2016 Nikola Hristov. All rights reserved.
 //
 
-#import "NHRecipesServices.h"
+#import "NHRecipeServices.h"
 #import "NHHttpClient.h"
-#import "NHRecipe.h"
 
-@implementation NHRecipesServices
+@implementation NHRecipeServices
 
 +(void)searchByCriteria:(NSDictionary *)criteria
                callback:(void (^)(NSArray* recipes, NSString* errorMessage))callback;{
@@ -71,6 +70,12 @@
                 [recipes addObject:currentRecipe];
             }
     callback(recipes, nil);
+}
+
+
++(void)getRecipeDetails:(NSString *)recipeId
+               callback:(void (^)(NHRecipe* recipe, NSString* errorMessage))callback; {
+    
 }
 
 @end

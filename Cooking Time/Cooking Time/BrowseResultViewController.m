@@ -7,28 +7,32 @@
 //
 
 #import "BrowseResultViewController.h"
-#import "NHRecipesServices.h"
+#import "NHRecipeServices.h"
 #import "NHRecipe.h"
 #import "NoInternetView.h"
 #import "Cooking_Time-Swift.h"
-#import "Toast.h"
-#import "RecipeCellTableViewCell.h"
-#import "ImageServices.h"
+#import "NHToastService.h"
+#import "RecipeTableViewCell.h"
+#import "NHImageServices.h"
 #import "RecipeDetail.h"
 
 @interface BrowseResultViewController () <UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *topBar;
 @property (weak, nonatomic) IBOutlet UITableView *recipesTableView;
 @property NSMutableArray* recipes;
 @property NoInternetView* noInternetView;
+
 @end
 
 @implementation BrowseResultViewController
 
-static NSString* cellIdentifire = @"RecipeCellTableViewCell";
+static NSString* defaultImageIdentifire = @"no-image.png";
+static NSString* cellIdentifire = @"RecipeTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.recipesTableView.dataSource = self;
     self.recipesTableView.delegate = self;
     
@@ -36,30 +40,33 @@ static NSString* cellIdentifire = @"RecipeCellTableViewCell";
                                 bundle:nil];
     
     [self.recipesTableView registerNib:nib
-               forCellReuseIdentifier:cellIdentifire];
+                forCellReuseIdentifier:cellIdentifire];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     if (self.doReloading) {
+        self.doReloading = NO;
         [self loadRecipes];
     }
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [LoadingServices hide];
+    [NHLoadingServices hide];
 }
 
 -(void) loadRecipes {
-    [LoadingServices show];
-    [NHRecipesServices searchByCriteria: self.params
+    [NHLoadingServices show:@"Loading recipes..."];
+    
+    [NHRecipeServices searchByCriteria: self.params
                                callback: ^(NSArray *recipes, NSString *errorMessage) {
                                    if (errorMessage) {
-                                       [LoadingServices fail];
-                                       [Toast showWithText:errorMessage];
+                                       [NHLoadingServices fail];
+                                       [NHToastService showWithText:errorMessage];
                                    } else {
-                                       [LoadingServices success];
+                                       [NHLoadingServices success];
                                        self.recipes = [NSMutableArray arrayWithArray:recipes];
                                        dispatch_async(dispatch_get_main_queue(), ^{
                                            [self.recipesTableView reloadData];
@@ -74,10 +81,10 @@ static NSString* cellIdentifire = @"RecipeCellTableViewCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NHRecipe *currentRecipe = [self.recipes objectAtIndex:indexPath.row];
-    RecipeCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifire forIndexPath:indexPath];
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifire forIndexPath:indexPath];
     
     cell.title.text = currentRecipe.name;
-    cell.image.image = [UIImage imageNamed: @"no-image.png"];
+    cell.image.image = [UIImage imageNamed: defaultImageIdentifire];
     [cell setRating:currentRecipe.rating];
     
     if(indexPath.row % 2 == 0){
@@ -93,9 +100,9 @@ static NSString* cellIdentifire = @"RecipeCellTableViewCell";
                                                alpha:1];
     }
     
-    [ImageServices getImage:currentRecipe.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
+    [NHImageServices getImage:currentRecipe.imageUrl callback:^(UIImage *image, NSString *errorMessage) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            RecipeCellTableViewCell *updateCell = (RecipeCellTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+            RecipeTableViewCell *updateCell = (RecipeTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
             if (updateCell) {
                 updateCell.image.image = image;
             }
@@ -118,7 +125,7 @@ static NSString* cellIdentifire = @"RecipeCellTableViewCell";
         NSIndexPath *indexPath = (NSIndexPath *)sender;
         
         NHRecipe *selectedRecipe = [self.recipes objectAtIndex:indexPath.row];
-        RecipeCellTableViewCell *selectedCell = (RecipeCellTableViewCell *)[self.recipesTableView cellForRowAtIndexPath:indexPath];
+        RecipeTableViewCell *selectedCell = (RecipeTableViewCell *)[self.recipesTableView cellForRowAtIndexPath:indexPath];
         UIImage *tempImage = selectedCell.image.image;
         
         RecipeDetail *recipeDetailController = (RecipeDetail *)segue.destinationViewController;

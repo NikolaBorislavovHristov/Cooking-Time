@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VideoCell : UITableViewCell
+@interface VideoTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *cellImage;
 @property (weak, nonatomic) IBOutlet UILabel *cellLabel;
-
 @property (weak, nonatomic) NSString *videoURL;
-
 - (IBAction)goToYouTube;
 
 @end

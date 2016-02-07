@@ -7,7 +7,7 @@
 //
 
 #import "RecipeDetail.h"
-#import "Toast.h"
+#import "NHToastService.h"
 @interface RecipeDetail ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigation;
 @property (weak, nonatomic) IBOutlet UIImageView *image;

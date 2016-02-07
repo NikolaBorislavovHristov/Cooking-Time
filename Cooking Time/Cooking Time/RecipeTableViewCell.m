@@ -6,15 +6,14 @@
 //  Copyright © 2016 Nikola Hristov. All rights reserved.
 //
 
-#import "RecipeCellTableViewCell.h"
+#import "RecipeTableViewCell.h"
 #import "RatingCollectionViewCell.h"
 
-
-@interface RecipeCellTableViewCell()  <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface RecipeTableViewCell()  <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *ratingView;
 @end
 
-@implementation RecipeCellTableViewCell
+@implementation RecipeTableViewCell
 
 static NSString* cellIdentifire = @"RatingCollectionViewCell";
 
@@ -35,11 +34,10 @@ static NSString* cellIdentifire = @"RatingCollectionViewCell";
     return [self.rating intValue];
 }
 
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifire
-                                                                         forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifire
+                                                                           forIndexPath:indexPath];
     
     return cell;
 }
@@ -50,4 +48,5 @@ static NSString* cellIdentifire = @"RatingCollectionViewCell";
         [self.ratingView reloadData];
     });
 }
+
 @end

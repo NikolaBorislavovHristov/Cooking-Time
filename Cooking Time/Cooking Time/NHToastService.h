@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "KSToastView.h"
 
-@interface Toast : NSObject
+@interface NHToastService : NSObject
+
 +(void) showWithText:(NSString*)text;
+
 @end
