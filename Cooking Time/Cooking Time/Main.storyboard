@@ -600,11 +600,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="EfD-DA-IDy">
-                                        <barButtonItem key="leftBarButtonItem" image="Prev" id="ljB-sY-j5e">
-                                            <connections>
-                                                <segue destination="GGU-YB-JXY" kind="unwind" unwindAction="unwindForSegue:" id="xRH-NO-coR"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" image="Prev" id="ljB-sY-j5e"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -622,7 +618,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="Prev" id="xgG-p9-L5B">
                                             <color key="tintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="GGU-YB-JXY" kind="unwind" unwindAction="unwindForSegue:" id="gXU-wx-WUO"/>
+                                                <segue destination="GGU-YB-JXY" kind="unwind" unwindAction="unwindForSegue:" id="8Ty-Q5-7If"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1016,7 +1012,7 @@
         <!--Shoping List-->
         <scene sceneID="kJw-06-ug9">
             <objects>
-                <viewController id="eep-2M-jT1" sceneMemberID="viewController">
+                <viewController id="eep-2M-jT1" customClass="ShopingListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Boz-h2-XYj"/>
                         <viewControllerLayoutGuide type="bottom" id="FCW-yN-ZGk"/>
@@ -1029,7 +1025,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XEu-rZ-b0M">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XEu-rZ-b0M">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -1083,6 +1079,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Shoping List" image="ShopingList" id="yw9-5N-QDL"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="shopingList" destination="XEu-rZ-b0M" id="kPt-Ff-Qmn"/>
+                        <segue destination="MNJ-sA-PRY" kind="show" identifier="showDetailRecipe" id="4BH-Hb-i0P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Xe-eK-7az" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1122,5 +1122,8 @@
         <image name="see" width="32" height="32"/>
         <image name="yummly-api-logo.png" width="88" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4BH-Hb-i0P"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

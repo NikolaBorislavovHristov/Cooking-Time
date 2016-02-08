@@ -14,7 +14,6 @@
 +(void)searchByCriteria:(NSDictionary *)criteria
                callback:(void (^)(NSArray* recipes, NSString* errorMessage))callback;
 
-+(void)getRecipeDetails:(NSString *)recipeId
-               callback:(void (^)(NHRecipe* recipe, NSString* errorMessage))callback;
++(NHRecipe*) convertJsonToRecipes:(NSDictionary *)currentRecipeRawData;
 
 @end

@@ -8,6 +8,7 @@
 //
 
 #import "NHRecipe.h"
+#import "NHImageServices.h"
 
 @implementation NHRecipe
 
@@ -16,7 +17,6 @@
                      ingredients: (NSArray*)ingredients
                             time: (NSNumber*)time
                          flavors: (NSDictionary*)flavors
-                        recipeId: (NSString*)recipeId
                        andRating: (NSNumber*)rating; {
     
     NHRecipe *recipe = [[NHRecipe alloc] init];
@@ -27,9 +27,7 @@
     recipe.time = time;
     recipe.flavors = flavors;
     recipe.rating = rating;
-    recipe.recipeId = recipeId;
     
     return recipe;
 }
-
 @end

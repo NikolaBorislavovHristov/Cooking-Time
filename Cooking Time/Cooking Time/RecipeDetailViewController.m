@@ -9,6 +9,8 @@
 #import "RecipeDetailViewController.h"
 #import "NHToastService.h"
 #import "FlavorTableViewCell.h"
+#import "NHDbContext.h"
+#import "NHImageServices.h"
 
 @interface RecipeDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UITableViewDataSource, UITableViewDelegate>
 
@@ -34,13 +36,12 @@ static NSString* flavorCellIdentifire = @"FlavorTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.scroller setScrollEnabled:YES];
-//    self.scroller.frame =
-//    [self.scroller setContentSize:CGSizeMake(768, 2000)];
     
     flavorNames = [self.recipe.flavors allKeys];
     [self.navigation setTitle:self.recipe.name];
     
     self.image.image = self.recipe.smallImage;
+    
     initImageFrame = self.image.frame;
     
     self.ratingView.dataSource = self;
@@ -133,8 +134,7 @@ static NSString* flavorCellIdentifire = @"FlavorTableViewCell";
 }
 
 - (IBAction)addToList {
-    
+    [[NHDbContext context] addRecipe:self.recipe];
 }
-
 
 @end

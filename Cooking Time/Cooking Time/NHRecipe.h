@@ -11,6 +11,7 @@
 
 @interface NHRecipe : NSObject
 
+@property (strong, nonatomic) NSDictionary* rawData;
 @property (strong, nonatomic) NSString* imageUrl;
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSArray* ingredients;
@@ -19,17 +20,13 @@
 @property (strong, nonatomic) NSNumber* rating;
 @property (strong, nonatomic) NSString* recipeId;
 @property (strong, nonatomic) UIImage* smallImage;
+@property (strong, nonatomic) NSString* encodedSmallImage;
 
-@property (strong, nonatomic) UIImage* photo;
-@property (strong, nonatomic) UIImage* audio;
-@property (strong, nonatomic) NSString* notes;
 
 +(instancetype) initWithImageUrl: (NSString*)imageUrl
                             name: (NSString*)name
                      ingredients: (NSArray*)ingredients
                             time: (NSNumber*)time
                          flavors: (NSDictionary*)flavors
-                        recipeId: (NSString*)recipeId
                        andRating: (NSNumber*)rating;
-
 @end

@@ -9,6 +9,8 @@
 #import "NHDbContext.h"
 #import "NHToastService.h"
 #import "NHRecipe.h"
+#import "NHImageServices.h"
+#import "NHRecipeServices.h"
 
 @implementation NHDbContext {
     sqlite3 *_db;
@@ -16,7 +18,7 @@
 
 -(instancetype)init {
     if(self = [super init]) {
-        NSString *sqliteDb = [[NSBundle mainBundle] pathForResource:@"recipes" ofType:@"sqlite"];
+        NSString *sqliteDb = [[NSBundle mainBundle] pathForResource:@"recipes" ofType:@"db"];
         if(sqlite3_open([sqliteDb UTF8String], &_db)) {
             [NHToastService showWithText:@"Can't open database"];
         }
@@ -44,18 +46,24 @@
 
 -(NSArray*) getRecipes {
     NSMutableArray *result = [NSMutableArray array];
-    NSString *query = @"SELECT name FROM Superheroes";
+    NSString *query = @"SELECT * FROM Recipes";
     sqlite3_stmt *statement;
+    
     if(sqlite3_prepare(_db, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
         while(sqlite3_step(statement) == SQLITE_ROW) {
-            //one more row in the result (statement)
-            char* nameChars =(char*) sqlite3_column_text(statement, 0);
             
-            NSString *name = [NSString stringWithUTF8String:nameChars];
+            int recipeIdRaw =(int)sqlite3_column_int(statement, 0);
+            NSNumber *recipeId = [NSNumber numberWithInt:recipeIdRaw];
             
-//            Superhero *superhero = [Superhero superheroWithName:name];
+            int length = sqlite3_column_bytes(statement, 1);
+            NSData *rawData = [[NSData alloc] initWithBytes: sqlite3_column_blob(statement, 1) length: length];
             
-//            [result addObject:superhero];
+            NSString* rawStr = [[[NSString alloc] initWithData:rawData encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"'" withString:@"\""];
+            
+            NSDictionary *recipeRawData = [NHDbContext convertStringToDictionary:rawStr];
+                           
+            NHRecipe *recipe = [NHRecipeServices convertJsonToRecipes:recipeRawData];
+            [result addObject:recipe];
         }
     }
     
@@ -63,22 +71,37 @@
 }
 
 -(void) addRecipe: (NHRecipe*) recipe {
-//    NSString *query = [NSString stringWithFormat:@"INSERT INTO Recipes (name) VALUES (\"%@\")", superhero.name];
     
+    NSString *blob = [[NHDbContext convertDictionaryToString:recipe.rawData] stringByReplacingOccurrencesOfString:@"\"" withString:@"'"];
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO Recipes (value) VALUES (\"%@\")", blob];
     sqlite3_stmt *statement;
     
-    char* errMsg;
-    
-//    sqlite3_prepare_v2(_db, [query UTF8String], -1, &statement, NULL);
-    if (sqlite3_step(statement) == SQLITE_DONE)
-    {
-        NSLog(@"Ok!");
+    sqlite3_prepare_v2(_db, [query UTF8String], -1, &statement, NULL);
+    if (sqlite3_step(statement) == SQLITE_DONE)  {
+        [NHToastService showWithText:@"Recipe added to shopping list"];
     }
     else {
-        NSLog(@"Not Ok!");
-        NSLog(@"%@", [NSString stringWithUTF8String:errMsg]);
+        [NHToastService showWithText:@"Recipe not added to shopping list"];
     }
+    
     sqlite3_finalize(statement);
+}
+
++(NSString *) convertDictionaryToString: (NSDictionary*) dict {
+    NSData * dictToData = [NSJSONSerialization dataWithJSONObject:dict
+                                                          options:0
+                                                            error:nil];
+    
+    return [[NSString alloc] initWithData:dictToData
+                                 encoding:NSUTF8StringEncoding];
+}
+
++(NSDictionary*) convertStringToDictionary: (NSString*) str {
+    NSData *data =[str dataUsingEncoding:NSUTF8StringEncoding];
+    
+    return (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data
+                                                           options:NSJSONReadingMutableContainers
+                                                             error:nil];
 }
 
 @end

@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "NHRecipe.h"
 
 @interface NHDbContext : NSObject
-
++(instancetype) context;
+-(NSArray*) getRecipes;
+-(void) addRecipe: (NHRecipe*) recipe;
 @end

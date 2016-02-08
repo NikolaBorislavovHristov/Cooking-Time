@@ -15,6 +15,7 @@
 #import "NHVideo.h"
 #import "Reachability.h"
 #import "Cooking_Time-Swift.h"
+#import "NHDbContext.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -74,6 +75,7 @@ static NSString* noInternetViewIdentifire = @"NoInternetView";
     if (self.isLoadingVideos == YES) {
         [NHLoadingServices hide];
     }
+    
 }
 
 -(void) loadVideos {
@@ -192,7 +194,5 @@ static NSString* noInternetViewIdentifire = @"NoInternetView";
     
     return cell;
 }
-
-
 
 @end
