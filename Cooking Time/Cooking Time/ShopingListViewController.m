@@ -83,7 +83,7 @@ static NSString* cellIdentifire = @"RecipeTableViewCell";
     return cell;
 }
 
-- (IBAction)unwindForSegueShoppingList:(UIStoryboardSegue *)unwindSegue {
+- (IBAction)unwindForSegue:(UIStoryboardSegue *)unwindSegue {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

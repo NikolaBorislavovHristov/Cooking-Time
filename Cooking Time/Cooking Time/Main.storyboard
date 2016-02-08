@@ -618,7 +618,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="Prev" id="xgG-p9-L5B">
                                             <color key="tintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="GGU-YB-JXY" kind="unwind" unwindAction="unwindForSegue:" id="8Ty-Q5-7If"/>
+                                                <segue destination="GGU-YB-JXY" kind="unwind" unwindAction="unwindForSegue:" id="dhE-c6-57V"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1123,7 +1123,7 @@
         <image name="yummly-api-logo.png" width="88" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4BH-Hb-i0P"/>
+        <segue reference="b9C-HK-zaH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>
