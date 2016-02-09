@@ -52,13 +52,13 @@
     if(sqlite3_prepare(_db, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
         while(sqlite3_step(statement) == SQLITE_ROW) {
             
-            int recipeIdRaw =(int)sqlite3_column_int(statement, 0);
-            NSNumber *recipeId = [NSNumber numberWithInt:recipeIdRaw];
+//            int recipeIdRaw =(int)sqlite3_column_int(statement, 0);
+//            NSNumber *recipeId = [NSNumber numberWithInt:recipeIdRaw];
             
             int length = sqlite3_column_bytes(statement, 1);
             NSData *rawData = [[NSData alloc] initWithBytes: sqlite3_column_blob(statement, 1) length: length];
             
-            NSString* rawStr = [[[NSString alloc] initWithData:rawData encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"'" withString:@"\""];
+            NSString* rawStr = [[[NSString alloc] initWithData:rawData encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"Б" withString:@"\""];
             
             NSDictionary *recipeRawData = [NHDbContext convertStringToDictionary:rawStr];
                            
@@ -72,7 +72,7 @@
 
 -(void) addRecipe: (NHRecipe*) recipe {
     
-    NSString *blob = [[NHDbContext convertDictionaryToString:recipe.rawData] stringByReplacingOccurrencesOfString:@"\"" withString:@"'"];
+    NSString *blob = [[NHDbContext convertDictionaryToString:recipe.rawData] stringByReplacingOccurrencesOfString:@"\"" withString:@"Б"];
     NSString *query = [NSString stringWithFormat:@"INSERT INTO Recipes (value) VALUES (\"%@\")", blob];
     sqlite3_stmt *statement;
     
