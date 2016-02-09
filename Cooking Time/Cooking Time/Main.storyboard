@@ -485,10 +485,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eq-o2-JnZ">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ma-CT-kHk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <textAttributes key="titleTextAttributes">
@@ -505,6 +501,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eq-o2-JnZ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -526,8 +526,8 @@
                             <mask key="subviews">
                                 <exclude reference="wJb-XF-5DL"/>
                                 <exclude reference="2HZ-M3-QLO"/>
-                                <exclude reference="0eq-o2-JnZ"/>
                                 <exclude reference="8ma-CT-kHk"/>
+                                <exclude reference="0eq-o2-JnZ"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="EDh-4g-Q6o"/>
@@ -549,8 +549,8 @@
                             <mask key="subviews">
                                 <include reference="wJb-XF-5DL"/>
                                 <include reference="2HZ-M3-QLO"/>
-                                <include reference="0eq-o2-JnZ"/>
                                 <include reference="8ma-CT-kHk"/>
+                                <include reference="0eq-o2-JnZ"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="EDh-4g-Q6o"/>
@@ -618,7 +618,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="Prev" id="xgG-p9-L5B">
                                             <color key="tintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="GGU-YB-JXY" kind="unwind" unwindAction="unwindForSegue:" id="dhE-c6-57V"/>
+                                                <action selector="backOnClick:" destination="MNJ-sA-PRY" id="f9V-9Z-WY0"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -672,10 +672,10 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="Z94-V6-GoM"/>
-                                                <exclude reference="2S5-ao-vBb"/>
-                                                <exclude reference="BAS-bh-kkG"/>
                                                 <exclude reference="DcJ-cY-RhB"/>
                                                 <exclude reference="awn-Cs-9HS"/>
+                                                <exclude reference="2S5-ao-vBb"/>
+                                                <exclude reference="BAS-bh-kkG"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -997,6 +997,8 @@
                         <outlet property="ratingView" destination="Z6l-1o-M1n" id="77E-jI-7bn"/>
                         <outlet property="scroller" destination="9ru-er-FBG" id="ggQ-HV-wJF"/>
                         <outlet property="timeLabel" destination="lOi-Fr-IdO" id="gLU-8h-HBa"/>
+                        <segue destination="GGU-YB-JXY" kind="unwind" identifier="unwindForSegueToBrowseResult" unwindAction="unwindForSegueToBrowseResult:" id="Xje-ic-iCC"/>
+                        <segue destination="GGU-YB-JXY" kind="unwind" identifier="unwindForSegueToShopping" unwindAction="unwindForSegueToShoppingList:" id="ZqE-kx-FVk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hd7-Ij-3Z7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1123,7 +1125,7 @@
         <image name="yummly-api-logo.png" width="88" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b9C-HK-zaH"/>
+        <segue reference="4BH-Hb-i0P"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.88235294119999996" green="0.3803921569" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

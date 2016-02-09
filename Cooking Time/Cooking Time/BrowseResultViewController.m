@@ -113,7 +113,7 @@ static NSString* cellIdentifire = @"RecipeTableViewCell";
     return cell;
 }
 
-- (IBAction)unwindForSegue:(UIStoryboardSegue *)unwindSegue {
+- (IBAction)unwindForSegueToBrowseResult:(UIStoryboardSegue *)unwindSegue {
     self.doReloading = NO;
 }
 
@@ -127,6 +127,7 @@ static NSString* cellIdentifire = @"RecipeTableViewCell";
         NHRecipe *selectedRecipe = [self.recipes objectAtIndex:indexPath.row];
         RecipeDetailViewController *recipeDetailController = (RecipeDetailViewController *)segue.destinationViewController;
         recipeDetailController.recipe = selectedRecipe;
+        recipeDetailController.comeFrom = @"browseresult";
     }
 }
 @end

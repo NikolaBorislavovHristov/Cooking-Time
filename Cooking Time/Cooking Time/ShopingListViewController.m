@@ -83,7 +83,7 @@ static NSString* cellIdentifire = @"RecipeTableViewCell";
     return cell;
 }
 
-- (IBAction)unwindForSegue:(UIStoryboardSegue *)unwindSegue {
+- (IBAction)unwindForSegueToShoppingList:(UIStoryboardSegue *)unwindSegue {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,6 +96,7 @@ static NSString* cellIdentifire = @"RecipeTableViewCell";
         NHRecipe *selectedRecipe = [self.recipes objectAtIndex:indexPath.row];
         RecipeDetailViewController *recipeDetailController = (RecipeDetailViewController *)segue.destinationViewController;
         recipeDetailController.recipe = selectedRecipe;
+        recipeDetailController.comeFrom = @"shoppinglist";
     }
 }
 

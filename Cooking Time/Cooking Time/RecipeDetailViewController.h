@@ -12,5 +12,6 @@
 @interface RecipeDetailViewController : UIViewController
 
 @property (strong, nonatomic) NHRecipe *recipe;
+@property (strong, nonatomic) NSString *comeFrom;
 
 @end

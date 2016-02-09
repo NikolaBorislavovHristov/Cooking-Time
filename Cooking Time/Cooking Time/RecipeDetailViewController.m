@@ -111,6 +111,13 @@ static NSString* flavorCellIdentifire = @"FlavorTableViewCell";
         return self.recipe.flavors.count;
     }
 }
+- (IBAction)backOnClick:(UIBarButtonItem *)sender {
+    if ([self.comeFrom  isEqual: @"shoppinglist"]) {
+        [self performSegueWithIdentifier:@"unwindForSegueToShopping" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"unwindForSegueToBrowseResult" sender:self];
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -133,6 +140,13 @@ static NSString* flavorCellIdentifire = @"FlavorTableViewCell";
     }
 }
 
+- (IBAction)unwindForSegue:(UIStoryboardSegue *)unwindSegue towardsViewController:(UIViewController *)subsequentVC{
+    if ([self.comeFrom  isEqual: @"shoppinglist"]) {
+        [self performSegueWithIdentifier:@"showDetailRecipe" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"showDetail" sender:self];
+    }
+}
 - (IBAction)addToList {
     [[NHDbContext context] addRecipe:self.recipe];
 }
