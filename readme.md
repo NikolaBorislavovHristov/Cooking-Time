@@ -9,6 +9,7 @@ Add recipes to your grocery list, write your notes and go to the market for the 
 Have a nice meal. It’s cooking time!
 
 ![Image of Yaktocat](http://www.tshirtroundup.com/wp-content/uploads/catablog/thumbnails/Cooking-Time-2.jpg)
+https://www.youtube.com/watch?v=MGTcLZxf8Hg
 
 * Browse recipes in my database by your criteria.
 * Add recipe products to your grocery list
